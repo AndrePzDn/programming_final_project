@@ -16,7 +16,7 @@ public class App {
             UserAdmin userAdmin = (UserAdmin) us;
             System.out.println(userAdmin.getName());
         }
-	Window1 Interface1 = new Window1();
+	    Window1 Interface1 = new Window1();
         
         Interface1.setVisible(true);
     }

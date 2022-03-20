@@ -60,10 +60,10 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="303" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="175" max="32767" attributes="0"/>
-                  <Component id="button7" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="230" max="32767" attributes="0"/>
+                  <Component id="Login" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="button1" min="-2" max="-2" attributes="0"/>
+                  <Component id="SingUp" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -74,8 +74,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="button1" min="-2" max="-2" attributes="0"/>
-                              <Component id="button7" min="-2" max="-2" attributes="0"/>
+                              <Component id="SingUp" min="-2" max="-2" attributes="0"/>
+                              <Component id="Login" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
@@ -103,15 +103,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
-                      <Component id="button2" min="-2" max="-2" attributes="0"/>
+                      <Component id="billboard" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="button3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Comment" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                      <Component id="button4" min="-2" max="-2" attributes="0"/>
+                      <Component id="Ranking" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                      <Component id="button5" min="-2" max="-2" attributes="0"/>
+                      <Component id="Puntos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -121,10 +121,10 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="button5" min="-2" max="-2" attributes="0"/>
-                          <Component id="button2" min="-2" max="-2" attributes="0"/>
-                          <Component id="button4" min="-2" max="-2" attributes="0"/>
-                          <Component id="button3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Puntos" min="-2" max="-2" attributes="0"/>
+                          <Component id="billboard" min="-2" max="-2" attributes="0"/>
+                          <Component id="Ranking" min="-2" max="-2" attributes="0"/>
+                          <Component id="Comment" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="49" max="32767" attributes="0"/>
@@ -135,7 +135,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel1">
             </Component>
-            <Component class="java.awt.Button" name="button2">
+            <Component class="java.awt.Button" name="billboard">
               <Properties>
                 <Property name="actionCommand" type="java.lang.String" value="Cartelera"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -156,10 +156,10 @@
                 </Property>
               </AccessibilityProperties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="billboardActionPerformed"/>
               </Events>
             </Component>
-            <Component class="java.awt.Button" name="button3">
+            <Component class="java.awt.Button" name="Comment">
               <Properties>
                 <Property name="actionCommand" type="java.lang.String" value="Cartelera"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -174,10 +174,10 @@
                 <Property name="label" type="java.lang.String" value="Comentar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CommentActionPerformed"/>
               </Events>
             </Component>
-            <Component class="java.awt.Button" name="button4">
+            <Component class="java.awt.Button" name="Ranking">
               <Properties>
                 <Property name="actionCommand" type="java.lang.String" value="Cartelera"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -192,10 +192,10 @@
                 <Property name="label" type="java.lang.String" value="Ranking"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button4ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RankingActionPerformed"/>
               </Events>
             </Component>
-            <Component class="java.awt.Button" name="button5">
+            <Component class="java.awt.Button" name="Puntos">
               <Properties>
                 <Property name="actionCommand" type="java.lang.String" value="Cartelera"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -210,12 +210,12 @@
                 <Property name="label" type="java.lang.String" value="Puntos"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button5ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PuntosActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="java.awt.Button" name="button1">
+        <Component class="java.awt.Button" name="SingUp">
           <Properties>
             <Property name="actionCommand" type="java.lang.String" value="Cartelera"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -227,10 +227,10 @@
             <Property name="label" type="java.lang.String" value="Registrarse"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SingUpActionPerformed"/>
           </Events>
         </Component>
-        <Component class="java.awt.Button" name="button7">
+        <Component class="java.awt.Button" name="Login">
           <Properties>
             <Property name="actionCommand" type="java.lang.String" value="Cartelera"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -242,7 +242,7 @@
             <Property name="label" type="java.lang.String" value="Login"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button7ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LoginActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -253,7 +253,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="66" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="&#xbf;Que pelicula vemos hoy?"/>
+            <Property name="text" type="java.lang.String" value="&#xbf;Que veremos hoy?"/>
           </Properties>
         </Component>
       </SubComponents>
