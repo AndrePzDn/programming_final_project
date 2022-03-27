@@ -2,6 +2,7 @@ package users;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -67,7 +68,8 @@ public class BasicFunctionOfUsers {
                 this.id = result1.getInt("id");
             }
             String sql2 = "INSERT INTO userClient VALUES("+(this.id+1)+",0,0,'"+userEmail+"','"+userName+"','"+password+"','"+userNickName+"','"+userGender+"')";
-            ResultSet result2 = statement.executeQuery(sql2);
+            PreparedStatement pstm= connection.prepareStatement(sql2);
+            pstm.execute();
         } catch (SQLException e) {
         }
     }

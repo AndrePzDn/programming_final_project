@@ -46,12 +46,12 @@ public class Login extends javax.swing.JFrame {
         EmailJTextField.setToolTipText("");
 
         PasswordText.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        PasswordText.setText("Contrase�a");
+        PasswordText.setText("Contraseña");
 
         JPasswordField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         SingUpText.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        SingUpText.setText("�Aun no tienes una cuenta?");
+        SingUpText.setText("¿Aun no tienes una cuenta?");
 
         Login.setBackground(new java.awt.Color(255, 0, 0));
         Login.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
