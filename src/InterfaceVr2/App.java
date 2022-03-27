@@ -9,7 +9,6 @@ public class App {
 
     public static void main(String[] args) {
         Login Interface1 = new Login();
-        
         Interface1.setVisible(true);
     }
 }
