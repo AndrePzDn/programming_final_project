@@ -12,8 +12,7 @@ public class billboard extends javax.swing.JFrame {
 
 
     public billboard() {
-        initComponents();
-        
+        initComponents();   
         this.setLocationRelativeTo(null);
     }
 
@@ -23,6 +22,7 @@ public class billboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
         background = new javax.swing.JPanel();
         jPanelTitle = new javax.swing.JPanel();
         billboardText = new javax.swing.JLabel();
@@ -35,6 +35,9 @@ public class billboard extends javax.swing.JFrame {
         Movie6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(1300, 1100));
 
         background.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -126,7 +129,7 @@ public class billboard extends javax.swing.JFrame {
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Movie4)
                     .addComponent(Movie1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Movie2)
                     .addComponent(Movie5))
@@ -140,34 +143,34 @@ public class billboard extends javax.swing.JFrame {
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addComponent(jPanelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Movie2)
-                    .addComponent(Movie1)
-                    .addComponent(Movie3))
-                .addGap(46, 46, 46)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Movie5)
-                    .addComponent(Movie6)
-                    .addComponent(Movie4))
-                .addContainerGap(77, Short.MAX_VALUE))
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addComponent(Movie1)
+                        .addGap(80, 80, 80)
+                        .addComponent(Movie4))
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Movie2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Movie3, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(80, 80, 80)
+                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Movie6)
+                            .addComponent(Movie5))))
+                .addGap(101, 101, 101))
         );
+
+        jScrollPane1.setViewportView(background);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
         );
 
         pack();
@@ -219,5 +222,6 @@ public class billboard extends javax.swing.JFrame {
     private javax.swing.JLabel billboardText;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanelTitle;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

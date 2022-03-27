@@ -45,7 +45,6 @@ public class BasicFunctionOfUsers {
                 return user;
             }
         }
-        System.out.println("Your email or your password is incorrect");
         return user;
     }
     public void singUp(int ci, String email, String name, String userPassword, String nickName, String gender){

@@ -1,5 +1,9 @@
 
 package Windows;
+import javax.swing.JOptionPane;
+import users.BasicFunctionOfUsers;
+import users.User;
+import users.UserAdmin;
 public class Login extends javax.swing.JFrame {
 
     public Login() {
@@ -12,11 +16,11 @@ public class Login extends javax.swing.JFrame {
 
         SingUp = new java.awt.Button();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        EmailText = new javax.swing.JLabel();
+        EmailJTextField = new javax.swing.JTextField();
+        PasswordText = new javax.swing.JLabel();
+        JPasswordField = new javax.swing.JPasswordField();
+        SingUpText = new javax.swing.JLabel();
         Login = new java.awt.Button();
         SingUp1 = new java.awt.Button();
 
@@ -35,19 +39,19 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        jLabel1.setText("Contraseña");
+        EmailText.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        EmailText.setText("Email");
 
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        EmailJTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        EmailJTextField.setToolTipText("");
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField1.setToolTipText("");
+        PasswordText.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        PasswordText.setText("Contraseña");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        jLabel3.setText("Email");
+        JPasswordField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel4.setText("¿Aun no tienes una cuenta?");
+        SingUpText.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        SingUpText.setText("¿Aun no tienes una cuenta?");
 
         Login.setBackground(new java.awt.Color(255, 0, 0));
         Login.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -82,33 +86,33 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
-                            .addComponent(jPasswordField1)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(PasswordText)
+                            .addComponent(EmailJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                            .addComponent(JPasswordField)
+                            .addComponent(EmailText, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(131, 131, 131)
                         .addComponent(SingUp1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(78, 78, 78)
-                        .addComponent(jLabel4)))
+                        .addComponent(SingUpText)))
                 .addContainerGap(64, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(EmailText, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(EmailJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(jLabel1)
+                .addComponent(PasswordText)
                 .addGap(38, 38, 38)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
                 .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61)
-                .addComponent(jLabel4)
+                .addComponent(SingUpText)
                 .addGap(30, 30, 30)
                 .addComponent(SingUp1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(42, Short.MAX_VALUE))
@@ -134,8 +138,28 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_SingUp1ActionPerformed
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
-        Window1 Windows = new Window1();
-        Windows.setVisible(true);
+        BasicFunctionOfUsers login1 = new BasicFunctionOfUsers();
+        String Email = EmailJTextField.getText();
+        String Password = "";
+        char[] PasswordArray = JPasswordField.getPassword();
+        for(int i = 0; i < PasswordArray.length; i++){
+            Password += PasswordArray[i];
+        }
+        User user = login1.logIn(Email, Password);
+        
+        if (user.getClass().toString().equalsIgnoreCase("class users.UserClient")){
+            if(user == null){
+                JOptionPane.showMessageDialog(null, "Error");
+            }
+            else{
+                Window1 Windows = new Window1();
+                Windows.setVisible(true);
+                dispose();
+        }
+        }else{
+           // UserAdmin userAdmin = (UserAdmin);
+        }
+
     }//GEN-LAST:event_LoginActionPerformed
 
     private void SingUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SingUpActionPerformed
@@ -144,14 +168,14 @@ public class Login extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField EmailJTextField;
+    private javax.swing.JLabel EmailText;
+    private javax.swing.JPasswordField JPasswordField;
     private java.awt.Button Login;
+    private javax.swing.JLabel PasswordText;
     private java.awt.Button SingUp;
     private java.awt.Button SingUp1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel SingUpText;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
