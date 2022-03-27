@@ -12,216 +12,235 @@ public class Window1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        label3 = new java.awt.Label();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        billboard = new java.awt.Button();
-        Comment = new java.awt.Button();
-        Ranking = new java.awt.Button();
-        Puntos = new java.awt.Button();
-        SingUp = new java.awt.Button();
-        Login = new java.awt.Button();
-        jLabel2 = new javax.swing.JLabel();
-
-        label3.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        label3.setForeground(new java.awt.Color(51, 51, 51));
-        label3.setText("Cartelera");
+        Found = new javax.swing.JPanel();
+        PanelTitle = new javax.swing.JPanel();
+        TitleCineText = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        PanelMenu = new javax.swing.JPanel();
+        SocialNetworksImage = new javax.swing.JLabel();
+        RecomendatiosButton = new javax.swing.JButton();
+        BillboardButton = new javax.swing.JButton();
+        RewardsButton = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        Found.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(51, 51, 255));
+        PanelTitle.setBackground(new java.awt.Color(51, 51, 255));
+        PanelTitle.setPreferredSize(new java.awt.Dimension(300, 100));
 
-        billboard.setActionCommand("Cartelera");
-        billboard.setBackground(new java.awt.Color(0, 0, 255));
-        billboard.setFont(new java.awt.Font("Segoe UI", 1, 17)); // NOI18N
-        billboard.setForeground(new java.awt.Color(255, 255, 255));
-        billboard.setLabel("Cartelera");
-        billboard.addActionListener(new java.awt.event.ActionListener() {
+        TitleCineText.setFont(new java.awt.Font("Elephant", 3, 50)); // NOI18N
+        TitleCineText.setForeground(new java.awt.Color(255, 255, 255));
+        TitleCineText.setText("Cine Code Crow");
+        TitleCineText.setToolTipText("");
+
+        jButton1.setBackground(new java.awt.Color(51, 51, 255));
+        jButton1.setFont(new java.awt.Font("Arial", 0, 25)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Salir");
+        jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                billboardActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        Comment.setActionCommand("Cartelera");
-        Comment.setBackground(new java.awt.Color(0, 0, 255));
-        Comment.setFont(new java.awt.Font("Segoe UI", 1, 17)); // NOI18N
-        Comment.setForeground(new java.awt.Color(255, 255, 255));
-        Comment.setLabel("Comentar");
-        Comment.addActionListener(new java.awt.event.ActionListener() {
+        javax.swing.GroupLayout PanelTitleLayout = new javax.swing.GroupLayout(PanelTitle);
+        PanelTitle.setLayout(PanelTitleLayout);
+        PanelTitleLayout.setHorizontalGroup(
+            PanelTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelTitleLayout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(TitleCineText)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 588, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86))
+        );
+        PanelTitleLayout.setVerticalGroup(
+            PanelTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelTitleLayout.createSequentialGroup()
+                .addGroup(PanelTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TitleCineText, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        PanelMenu.setBackground(new java.awt.Color(32, 31, 31));
+        PanelMenu.setForeground(new java.awt.Color(255, 255, 255));
+        PanelMenu.setAlignmentX(0.0F);
+        PanelMenu.setAlignmentY(0.0F);
+        PanelMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        SocialNetworksImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/redes sociales cine.png"))); // NOI18N
+
+        RecomendatiosButton.setBackground(new java.awt.Color(32, 31, 31));
+        RecomendatiosButton.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N
+        RecomendatiosButton.setForeground(new java.awt.Color(255, 255, 255));
+        RecomendatiosButton.setText("Recomendaciones");
+        RecomendatiosButton.setBorder(null);
+        RecomendatiosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CommentActionPerformed(evt);
+                RecomendatiosButtonActionPerformed(evt);
             }
         });
 
-        Ranking.setActionCommand("Cartelera");
-        Ranking.setBackground(new java.awt.Color(0, 0, 255));
-        Ranking.setFont(new java.awt.Font("Segoe UI", 1, 17)); // NOI18N
-        Ranking.setForeground(new java.awt.Color(255, 255, 255));
-        Ranking.setLabel("Ranking");
-        Ranking.addActionListener(new java.awt.event.ActionListener() {
+        BillboardButton.setBackground(new java.awt.Color(32, 31, 31));
+        BillboardButton.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N
+        BillboardButton.setForeground(new java.awt.Color(255, 255, 255));
+        BillboardButton.setText("Cartelera");
+        BillboardButton.setBorder(null);
+        BillboardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RankingActionPerformed(evt);
+                BillboardButtonActionPerformed(evt);
             }
         });
 
-        Puntos.setActionCommand("Cartelera");
-        Puntos.setBackground(new java.awt.Color(0, 0, 255));
-        Puntos.setFont(new java.awt.Font("Segoe UI", 1, 17)); // NOI18N
-        Puntos.setForeground(new java.awt.Color(255, 255, 255));
-        Puntos.setLabel("Puntos");
-        Puntos.addActionListener(new java.awt.event.ActionListener() {
+        RewardsButton.setBackground(new java.awt.Color(32, 31, 31));
+        RewardsButton.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N
+        RewardsButton.setForeground(new java.awt.Color(255, 255, 255));
+        RewardsButton.setText("Premios");
+        RewardsButton.setBorder(null);
+        RewardsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PuntosActionPerformed(evt);
+                RewardsButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addComponent(billboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1)
-                .addGap(33, 33, 33)
-                .addComponent(Comment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator1.setPreferredSize(new java.awt.Dimension(5, 100));
+
+        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator2.setPreferredSize(new java.awt.Dimension(5, 100));
+
+        javax.swing.GroupLayout PanelMenuLayout = new javax.swing.GroupLayout(PanelMenu);
+        PanelMenu.setLayout(PanelMenuLayout);
+        PanelMenuLayout.setHorizontalGroup(
+            PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelMenuLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BillboardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(RecomendatiosButton)
+                .addGap(49, 49, 49)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
-                .addComponent(Ranking, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
-                .addComponent(Puntos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(RewardsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(222, 222, 222)
+                .addComponent(SocialNetworksImage, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Puntos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(billboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ranking, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Comment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addContainerGap(49, Short.MAX_VALUE))
+        PanelMenuLayout.setVerticalGroup(
+            PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(SocialNetworksImage, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(RecomendatiosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(BillboardButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(RewardsButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        billboard.getAccessibleContext().setAccessibleDescription("");
-        billboard.getAccessibleContext().setAccessibleParent(this);
+        jLabel8.setFont(new java.awt.Font("Bodoni MT Black", 3, 50)); // NOI18N
+        jLabel8.setText("Cartelera");
 
-        SingUp.setActionCommand("Cartelera");
-        SingUp.setBackground(new java.awt.Color(255, 255, 255));
-        SingUp.setFont(new java.awt.Font("Segoe UI", 1, 17)); // NOI18N
-        SingUp.setLabel("Registrarse");
-        SingUp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SingUpActionPerformed(evt);
-            }
-        });
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pelicula (6).jpg"))); // NOI18N
 
-        Login.setActionCommand("Cartelera");
-        Login.setBackground(new java.awt.Color(255, 255, 255));
-        Login.setFont(new java.awt.Font("Segoe UI", 1, 17)); // NOI18N
-        Login.setLabel("Login");
-        Login.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginActionPerformed(evt);
-            }
-        });
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pelicula (2).jpg"))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Historic", 0, 20)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel2.setText("¿Que veremos hoy?");
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pelicula (4).jpg"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(303, 303, 303)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
-                .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(SingUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        javax.swing.GroupLayout FoundLayout = new javax.swing.GroupLayout(Found);
+        Found.setLayout(FoundLayout);
+        FoundLayout.setHorizontalGroup(
+            FoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE)
+            .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(FoundLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addGroup(FoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addGroup(FoundLayout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel10)
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel11)))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SingUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(410, Short.MAX_VALUE))
+        FoundLayout.setVerticalGroup(
+            FoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FoundLayout.createSequentialGroup()
+                .addComponent(PanelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addGroup(FoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(FoundLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(44, 44, 44)
+                        .addGroup(FoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel9)))
+                    .addComponent(jLabel11))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Found, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Found, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SingUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SingUpActionPerformed
-        singUp WindowSingUp = new singUp();
-        WindowSingUp.setVisible(true);
-        
-    }//GEN-LAST:event_SingUpActionPerformed
+    private void BillboardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BillboardButtonActionPerformed
+        billboard billboardMovie = new billboard();
+        billboardMovie.setVisible(true);
+    }//GEN-LAST:event_BillboardButtonActionPerformed
 
-    private void billboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_billboardActionPerformed
-        billboard WindowBillboard = new billboard();      
-        WindowBillboard.setVisible(true);
-    }//GEN-LAST:event_billboardActionPerformed
+    private void RecomendatiosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecomendatiosButtonActionPerformed
+        Ranking RankingMovie = new Ranking();
+        RankingMovie.setVisible(true);
+    }//GEN-LAST:event_RecomendatiosButtonActionPerformed
 
-    private void CommentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CommentActionPerformed
-        billboard Cartelera = new billboard();      
-        Cartelera.setVisible(true); 
-    }//GEN-LAST:event_CommentActionPerformed
+    private void RewardsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RewardsButtonActionPerformed
+        Points PointsMovie = new Points();
+        PointsMovie.setVisible(true);
+    }//GEN-LAST:event_RewardsButtonActionPerformed
 
-    private void RankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RankingActionPerformed
-        Ranking WindowRanking = new Ranking();      
-        WindowRanking.setVisible(true);        
-    }//GEN-LAST:event_RankingActionPerformed
-
-    private void PuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PuntosActionPerformed
-       Points WindowPoints = new Points();
-       WindowPoints.setVisible(true);
-    }//GEN-LAST:event_PuntosActionPerformed
-
-    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
-        Login WindowLogin = new Login();
-        WindowLogin.setVisible(true);
-    }//GEN-LAST:event_LoginActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button Comment;
-    private java.awt.Button Login;
-    private java.awt.Button Puntos;
-    private java.awt.Button Ranking;
-    private java.awt.Button SingUp;
-    private java.awt.Button billboard;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private java.awt.Label label3;
+    private javax.swing.JButton BillboardButton;
+    private javax.swing.JPanel Found;
+    private javax.swing.JPanel PanelMenu;
+    private javax.swing.JPanel PanelTitle;
+    private javax.swing.JButton RecomendatiosButton;
+    private javax.swing.JButton RewardsButton;
+    private javax.swing.JLabel SocialNetworksImage;
+    private javax.swing.JLabel TitleCineText;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
 }
