@@ -28,7 +28,6 @@ public class Movie6 extends javax.swing.JDialog {
         ScoreTextField = new javax.swing.JTextField();
         Comment = new javax.swing.JButton();
         Image = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -131,17 +130,12 @@ public class Movie6 extends javax.swing.JDialog {
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addComponent(Image)
+                        .addGap(72, 72, 72)
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(BackgroundLayout.createSequentialGroup()
-                                .addGap(72, 72, 72)
-                                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Duration)
-                                    .addComponent(Genre)
-                                    .addComponent(Premier)
-                                    .addComponent(Synopsis)))
-                            .addGroup(BackgroundLayout.createSequentialGroup()
-                                .addGap(289, 289, 289)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Duration)
+                            .addComponent(Genre)
+                            .addComponent(Premier)
+                            .addComponent(Synopsis))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -177,9 +171,7 @@ public class Movie6 extends javax.swing.JDialog {
                         .addComponent(Premier)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Synopsis)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(149, 149, 149)))
+                        .addGap(149, 492, Short.MAX_VALUE)))
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addComponent(ScoreText)
@@ -236,6 +228,5 @@ public class Movie6 extends javax.swing.JDialog {
     private javax.swing.JLabel TitleCineText;
     private javax.swing.JLabel TitleMovie;
     private javax.swing.JPanel jPanelTitle;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

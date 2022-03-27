@@ -152,10 +152,10 @@ public class Login extends javax.swing.JFrame {
                 Windows.setVisible(true);
                 dispose();
             }else{
-               // UserAdmin userAdmin = (UserAdmin);
+                
             }
         }else{
-            JOptionPane.showMessageDialog(null, "Error");
+            JOptionPane.showMessageDialog(null, "Error, Datos Incorrectos");
         }
 
 

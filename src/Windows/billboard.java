@@ -26,7 +26,7 @@ public class billboard extends javax.swing.JFrame {
         background = new javax.swing.JPanel();
         jPanelTitle = new javax.swing.JPanel();
         billboardText = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        ExitJButton = new javax.swing.JButton();
         Movie1 = new javax.swing.JButton();
         Movie2 = new javax.swing.JButton();
         Movie3 = new javax.swing.JButton();
@@ -47,16 +47,16 @@ public class billboard extends javax.swing.JFrame {
         billboardText.setForeground(new java.awt.Color(255, 255, 255));
         billboardText.setText("Cartelera");
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 255));
-        jButton1.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Cerrar");
-        jButton1.setActionCommand("");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ExitJButton.setBackground(new java.awt.Color(51, 51, 255));
+        ExitJButton.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        ExitJButton.setForeground(new java.awt.Color(255, 255, 255));
+        ExitJButton.setText("Cerrar");
+        ExitJButton.setActionCommand("");
+        ExitJButton.setBorder(null);
+        ExitJButton.setBorderPainted(false);
+        ExitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ExitJButtonActionPerformed(evt);
             }
         });
 
@@ -68,12 +68,12 @@ public class billboard extends javax.swing.JFrame {
                 .addGap(121, 121, 121)
                 .addComponent(billboardText)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ExitJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
         );
         jPanelTitleLayout.setVerticalGroup(
             jPanelTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ExitJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(billboardText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
 
@@ -176,9 +176,9 @@ public class billboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ExitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitJButtonActionPerformed
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ExitJButtonActionPerformed
 
     private void Movie1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie1ActionPerformed
         Movie1 Movie = new Movie1(this,true);
@@ -212,6 +212,7 @@ public class billboard extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ExitJButton;
     private javax.swing.JButton Movie1;
     private javax.swing.JButton Movie2;
     private javax.swing.JButton Movie3;
@@ -220,7 +221,6 @@ public class billboard extends javax.swing.JFrame {
     private javax.swing.JButton Movie6;
     private javax.swing.JPanel background;
     private javax.swing.JLabel billboardText;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanelTitle;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

@@ -117,14 +117,14 @@
                           <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                           <Component id="billboardText" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="115" max="-2" attributes="0"/>
+                          <Component id="ExitJButton" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
+                      <Component id="ExitJButton" alignment="0" max="32767" attributes="0"/>
                       <Component id="billboardText" alignment="1" pref="140" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
@@ -141,7 +141,7 @@
                     <Property name="text" type="java.lang.String" value="Cartelera"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton1">
+                <Component class="javax.swing.JButton" name="ExitJButton">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="33" red="33" type="rgb"/>
@@ -160,7 +160,7 @@
                     <Property name="borderPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExitJButtonActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

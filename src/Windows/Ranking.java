@@ -27,12 +27,12 @@ public class Ranking extends javax.swing.JFrame {
         jPanelTitle = new javax.swing.JPanel();
         Title = new javax.swing.JLabel();
         Exit = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        ScoreText1 = new javax.swing.JLabel();
+        ScoreText2 = new javax.swing.JLabel();
+        ScoreText3 = new javax.swing.JLabel();
         Movie1 = new javax.swing.JButton();
+        Movie2 = new javax.swing.JButton();
         Movie3 = new javax.swing.JButton();
-        Movie4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -75,14 +75,14 @@ public class Ranking extends javax.swing.JFrame {
             .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 25)); // NOI18N
-        jLabel2.setText("Puntuacion");
+        ScoreText1.setFont(new java.awt.Font("Arial", 0, 25)); // NOI18N
+        ScoreText1.setText("Puntuacion");
 
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 25)); // NOI18N
-        jLabel3.setText("Puntuacion");
+        ScoreText2.setFont(new java.awt.Font("Arial", 0, 25)); // NOI18N
+        ScoreText2.setText("Puntuacion");
 
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 25)); // NOI18N
-        jLabel4.setText("Puntuacion");
+        ScoreText3.setFont(new java.awt.Font("Arial", 0, 25)); // NOI18N
+        ScoreText3.setText("Puntuacion");
 
         Movie1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Redimiencionado formato Mediano (1).jpg"))); // NOI18N
         Movie1.addActionListener(new java.awt.event.ActionListener() {
@@ -91,17 +91,17 @@ public class Ranking extends javax.swing.JFrame {
             }
         });
 
-        Movie3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Redimiencionado formato Mediano (3).jpg"))); // NOI18N
-        Movie3.addActionListener(new java.awt.event.ActionListener() {
+        Movie2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Redimiencionado formato Mediano (3).jpg"))); // NOI18N
+        Movie2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Movie3ActionPerformed(evt);
+                Movie2ActionPerformed(evt);
             }
         });
 
-        Movie4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Redimiencionado formato Mediano (4).jpg"))); // NOI18N
-        Movie4.addActionListener(new java.awt.event.ActionListener() {
+        Movie3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Redimiencionado formato Mediano (4).jpg"))); // NOI18N
+        Movie3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Movie4ActionPerformed(evt);
+                Movie3ActionPerformed(evt);
             }
         });
 
@@ -114,19 +114,19 @@ public class Ranking extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addGap(179, 179, 179)
-                .addComponent(jLabel2)
+                .addComponent(ScoreText1)
                 .addGap(293, 293, 293)
-                .addComponent(jLabel3)
+                .addComponent(ScoreText2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
+                .addComponent(ScoreText3)
                 .addGap(187, 187, 187))
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addGap(110, 110, 110)
                 .addComponent(Movie1)
                 .addGap(141, 141, 141)
-                .addComponent(Movie3)
+                .addComponent(Movie2)
                 .addGap(104, 104, 104)
-                .addComponent(Movie4)
+                .addComponent(Movie3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BackgroundLayout.setVerticalGroup(
@@ -135,19 +135,19 @@ public class Ranking extends javax.swing.JFrame {
                 .addComponent(jPanelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Movie4)
                     .addComponent(Movie3)
+                    .addComponent(Movie2)
                     .addComponent(Movie1))
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(jLabel2))
+                        .addComponent(ScoreText1))
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addComponent(jLabel3))
+                        .addComponent(ScoreText2))
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addGap(67, 67, 67)
-                        .addComponent(jLabel4)))
+                        .addComponent(ScoreText3)))
                 .addContainerGap(413, Short.MAX_VALUE))
         );
 
@@ -161,7 +161,7 @@ public class Ranking extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1100, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
 
         pack();
@@ -176,27 +176,27 @@ public class Ranking extends javax.swing.JFrame {
         Movie.setVisible(true);
     }//GEN-LAST:event_Movie1ActionPerformed
 
-    private void Movie3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie3ActionPerformed
+    private void Movie2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie2ActionPerformed
         Movie3 Movie = new Movie3(this,true);
         Movie.setVisible(true);
-    }//GEN-LAST:event_Movie3ActionPerformed
+    }//GEN-LAST:event_Movie2ActionPerformed
 
-    private void Movie4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie4ActionPerformed
+    private void Movie3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie3ActionPerformed
         Movie4 Movie = new Movie4(this,true);
         Movie.setVisible(true);
-    }//GEN-LAST:event_Movie4ActionPerformed
+    }//GEN-LAST:event_Movie3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
     private javax.swing.JButton Exit;
     private javax.swing.JButton Movie1;
+    private javax.swing.JButton Movie2;
     private javax.swing.JButton Movie3;
-    private javax.swing.JButton Movie4;
+    private javax.swing.JLabel ScoreText1;
+    private javax.swing.JLabel ScoreText2;
+    private javax.swing.JLabel ScoreText3;
     private javax.swing.JLabel Title;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanelTitle;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
