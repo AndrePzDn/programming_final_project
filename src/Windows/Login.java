@@ -46,12 +46,12 @@ public class Login extends javax.swing.JFrame {
         EmailJTextField.setToolTipText("");
 
         PasswordText.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        PasswordText.setText("Contraseña");
+        PasswordText.setText("Contraseï¿½a");
 
         JPasswordField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         SingUpText.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        SingUpText.setText("¿Aun no tienes una cuenta?");
+        SingUpText.setText("ï¿½Aun no tienes una cuenta?");
 
         Login.setBackground(new java.awt.Color(255, 0, 0));
         Login.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -146,19 +146,18 @@ public class Login extends javax.swing.JFrame {
             Password += PasswordArray[i];
         }
         User user = login1.logIn(Email, Password);
-        
-        if (user.getClass().toString().equalsIgnoreCase("class users.UserClient")){
-            if(user == null){
-                JOptionPane.showMessageDialog(null, "Error");
-            }
-            else{
+        if(user != null){
+            if (user.getClass().toString().equalsIgnoreCase("class users.UserClient")){      
                 Window1 Windows = new Window1();
                 Windows.setVisible(true);
                 dispose();
-        }
+            }else{
+               // UserAdmin userAdmin = (UserAdmin);
+            }
         }else{
-           // UserAdmin userAdmin = (UserAdmin);
+            JOptionPane.showMessageDialog(null, "Error");
         }
+
 
     }//GEN-LAST:event_LoginActionPerformed
 
