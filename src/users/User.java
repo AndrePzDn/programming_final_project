@@ -2,16 +2,14 @@ package users;
 
 public abstract class User {
     private int id;
-    private int ci;
     private String name;
     private String email;
     private String userPassword;
     private String nickName;
     private String gender;
 
-    public User(int id, int ci, String email, String name, String userPassword, String nickName, String gender){
+    public User(int id, String email, String name, String userPassword, String nickName, String gender){
         this.id = id;
-        this.ci = ci;
         this.email = email;
         this.userPassword = userPassword;
         this.nickName = nickName;
@@ -20,9 +18,6 @@ public abstract class User {
     }
     public int getId(){
         return this.id;
-    }
-    public int getCi(){
-        return this.ci;
     }
     public String getName(){
         return this.name;
