@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class BasicFunctionOfUsers {
 
+    public int id;
     ArrayList<User> userList;
 
     public BasicFunctionOfUsers(){
@@ -55,11 +56,19 @@ public class BasicFunctionOfUsers {
         }
         return user;
     }
-    public void singUp(String email, String name, String userPassword, String nickName, String gender){
-        int size = this.userList.size()-1;
-        this.userList.get(size);
-        User user = new UserClient(size+1, 0, 0, email, name, userPassword, nickName, gender);
-        userList.add(user);
-        size = this.userList.size()-1;
+    public void singUp(String userEmail, String userName, String password, String userNickName, String userGender){
+        Connection connection;
+        try {
+            connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            String sql1 = "SELECT * FROM userClient";
+            Statement statement = connection.createStatement();
+            ResultSet result1 = statement.executeQuery(sql1);
+            while(result1.next()){
+                this.id = result1.getInt("id");
+            }
+            String sql2 = "INSERT INTO userClient VALUES("+(this.id+1)+",0,0,'"+userEmail+"','"+userName+"','"+password+"','"+userNickName+"','"+userGender+"')";
+            ResultSet result2 = statement.executeQuery(sql2);
+        } catch (SQLException e) {
+        }
     }
 }
