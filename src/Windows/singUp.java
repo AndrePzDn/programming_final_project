@@ -1,6 +1,8 @@
 
 package Windows;
 
+import users.BasicFunctionOfUsers;
+
 public class singUp extends javax.swing.JFrame {
 
     public singUp() {
@@ -53,7 +55,7 @@ public class singUp extends javax.swing.JFrame {
         EmailText.setText("Correo");
 
         PasswordText.setFont(new java.awt.Font("Segoe UI", 0, 21)); // NOI18N
-        PasswordText.setText("Contraseña");
+        PasswordText.setText("Contraseï¿½a");
 
         PasswordJPasswordField.setPreferredSize(new java.awt.Dimension(63, 22));
         PasswordJPasswordField.addActionListener(new java.awt.event.ActionListener() {
@@ -145,6 +147,17 @@ public class singUp extends javax.swing.JFrame {
     }//GEN-LAST:event_PasswordJPasswordFieldActionPerformed
 
     private void SingUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SingUpButtonActionPerformed
+        BasicFunctionOfUsers singup1 = new BasicFunctionOfUsers();
+        String userName = NameJTextField.getText();
+        String userNickName = NickNamejTextField.getText();
+        String gender = GenreJTextField.getText();
+        String userEmail = EmailJTextField.getText();
+        String password = "";
+        char[] PasswordArray = PasswordJPasswordField.getPassword();
+        for(int i = 0; i < PasswordArray.length; i++){
+            password += PasswordArray[i];
+        }
+        singup1.singUp(userEmail, userName, password, userNickName, gender);
         Login Loginwindows= new Login();
         Loginwindows.setVisible(true);
         dispose();
