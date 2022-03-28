@@ -20,26 +20,20 @@ public class UserAdmin extends User{
         super(id, email, name, userPassword, nickName, gender);
     }
     public void adminProgram(){
-        String movieName;
-        String movieGender;
-        String duration;
-        String premiere;
-        String synopsis;
-        String imageDirectory;
-        String update;
-        String function;
-        String movieToUpdate;
+        try {
+        String movieGender, duration, premiere, synopsis, imageDirectory, update, movieToUpdate;
+        int option;
         Scanner sc = new Scanner(System.in);
         MovieManager movieManager = new MovieManager();
         boolean run = true;
         while (run){
-            try {
                 System.out.println("Elija una opcion\n1. Añadir una pelicula\n2. Actualizar pelicula \n3. Ver Peliculas\n0. Salir");
-                int option = sc.nextInt();
+                option = sc.nextInt();
                 if(option == 1){
                     System.out.println("Usted selecciono añadir una pelicula");
-                    System.out.println("Introduzca el nombre de la pelicula: ");
-                    movieName = sc.nextLine();
+                    String movieName = sc.nextLine();
+                    System.out.println("Introduzca el nombre de la pelicula");
+                    String asd = sc.nextLine();
                     System.out.println("Introduzca el genero de la pelicula");
                     movieGender = sc.nextLine();
                     System.out.println("Introduzca la duracion de la pelicula: ");
@@ -50,20 +44,49 @@ public class UserAdmin extends User{
                     synopsis = sc.nextLine();
                     System.out.println("Introduzca el directorio de la imagen de la pelicula");
                     imageDirectory = sc.nextLine();
-                    movieManager.createMovie(movieName, movieGender, duration, premiere, synopsis, imageDirectory);
+                    movieManager.createMovie(asd, movieGender, duration, premiere, synopsis, imageDirectory);
                 }else if(option == 2){
-                    System.out.println("Usted selecciono actualizar pelicula");
-                    System.out.println("Introduzca el nombre de pelicula que desea editar");
+                    System.out.println("Usted selecciono actualizar pelicula\nIntroduzca el id de pelicula que desea editar");
+                    int movieId = sc.nextInt();
                     movieToUpdate = sc.nextLine();
-                    if (movieManager.verifyNameOfMovie(movieToUpdate).equalsIgnoreCase("Correct")){
-                        Movie movie = movieManager.readMovie(movieToUpdate);
-                        System.out.println("Que atributo desea cambiar");
-                        function = sc.nextLine();
-                        System.out.println("Por que valor se cambiara");
-                        update = sc.nextLine();
-                        movieManager.updateMovie(movie.getId(), function, update);
+                    if (movieManager.verifyNameOfMovie(movieId)){
+                        System.out.println("Que atributo desea cambiar\n1.Nombre\n2.Genero\n3.Duracion\n4.Premiere\n5.Sinopsis\n6.Image Directory");
+                        option = sc.nextInt();
+                        if (option == 1){
+                            System.out.println("Nuevo nombre:");
+                            String movieName = sc.nextLine();
+                            String newValue = sc.nextLine();
+                            movieManager.updateMovie(movieId, "name", newValue);
+                        }else if (option == 2){
+                            System.out.println("Nuevo gender:");
+                            String movieName = sc.nextLine();
+                            String newValue = sc.nextLine();
+                            movieManager.updateMovie(movieId, "gender", newValue);
+                        }else if (option ==3){
+                            System.out.println("Nuevo duracion:");
+                            String movieName = sc.nextLine();
+                            String newValue = sc.nextLine();
+                            movieManager.updateMovie(movieId, "duration", newValue);
+                        }else if (option == 4){
+                            System.out.println("Nuevo premiere:");
+                            String movieName = sc.nextLine();
+                            String newValue = sc.nextLine();
+                            movieManager.updateMovie(movieId, "premiere", newValue);
+                        }else if (option ==5){
+                            System.out.println("Nueva sisnopsis:");
+                            String movieName = sc.nextLine();
+                            String newValue = sc.nextLine();
+                            movieManager.updateMovie(movieId, "synopsis", newValue);
+                        }else if (option == 6){
+                            System.out.println("Nuevo valor:");
+                            String movieName = sc.nextLine();
+                            String newValue = sc.nextLine();
+                            movieManager.updateMovie(movieId, "imageDirectory", newValue);
+                        }else{
+                            System.out.println("Opcion no valida");
+                        }
                     }else {
-                        System.out.println(movieManager.verifyNameOfMovie(movieToUpdate));
+                        System.out.println("Id invalido");
                     }
 
                 }else if (option == 3){
@@ -71,11 +94,11 @@ public class UserAdmin extends User{
                 }else if (option == 0){
                     run = false;
                 }
-            } catch (Exception e) {
-                System.out.println(e);
             }
+            sc.close();
+        } catch (Exception e) {
+            System.out.println(e);
         }
-        sc.close();
     }
     @Override
     public void setName(String name){

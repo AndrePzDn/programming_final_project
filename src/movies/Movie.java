@@ -57,7 +57,7 @@ public class Movie {
     }
     public void setName(String name){
         try {
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
             String sql2 = "UPDATE movie SET name = '"+name+"' WHERE id = "+getId()+"";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();
@@ -68,7 +68,7 @@ public class Movie {
     }
     public void setGender(String gender){
         try {
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
             String sql2 = "UPDATE movie SET gender = '"+gender+"' WHERE id = "+getId()+"";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();
@@ -79,7 +79,7 @@ public class Movie {
     }
     public void setDuration(String duration){
         try {
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
             String sql2 = "UPDATE movie SET duration = '"+duration+"' WHERE id = "+getId()+"";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();
@@ -90,7 +90,7 @@ public class Movie {
     }
     public void setPremiere(String premiere){
         try {
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
             String sql2 = "UPDATE movie SET premiere = '"+premiere+"' WHERE id = "+getId()+"";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();
@@ -101,7 +101,7 @@ public class Movie {
     }
     public void setSynopsis(String synopsis){
         try {
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
             String sql2 = "UPDATE movie SET synopsis = '"+synopsis+"' WHERE id = "+getId()+"";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();
@@ -112,7 +112,7 @@ public class Movie {
     }
     public void setRanking(int ranking){
         try {
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
             String sql2 = "UPDATE movie SET ranking = '"+ranking+"' WHERE id = "+getId()+"";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();
@@ -123,7 +123,7 @@ public class Movie {
     }
     public void setImageDirectory(String imageDirectiry){
         try {
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
             String sql2 = "UPDATE movie SET imageDirectiry = '"+imageDirectiry+"' WHERE id = "+getId()+"";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();

@@ -4,7 +4,6 @@ package Windows;
 import billboard.Movie1;
 import movies.Movie;
 import movies.MovieManager;
-
 import javax.swing.ImageIcon;
 
 public class billboard extends javax.swing.JFrame {
@@ -14,8 +13,6 @@ public class billboard extends javax.swing.JFrame {
         initComponents();   
         this.setLocationRelativeTo(null);
     }
-
-
 
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

@@ -9,12 +9,12 @@ import java.sql.Statement;
 
 public class MovieManager {
 
-    int id;
-    int count;
+    public int id;
+    public int count;
 
     public void createMovie(String name, String gender, String duration, String premiere, String synopsis, String imageDirectory){
         try {
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
             String sql1 = "SELECT * FROM movie";
             Statement statement = connection.createStatement();
             ResultSet result1 = statement.executeQuery(sql1);
@@ -31,7 +31,7 @@ public class MovieManager {
     }
     public void removeMovie(String name){
         try {
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
             String sql2 = "DELETE FROM movie WHERE name='"+name+"'";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();
@@ -42,7 +42,7 @@ public class MovieManager {
     public void updateMovie(int id, String toUpdate, String update){
         String sql2; 
         try {
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
             sql2 = "UPDATE movie SET "+toUpdate+" = '"+update+"' WHERE id = "+id+"";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();
@@ -54,7 +54,7 @@ public class MovieManager {
         Connection connection;
         Movie movie = null;
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
             String sql1 = "SELECT * FROM movie";
             Statement statement = connection.createStatement();
             ResultSet result1 = statement.executeQuery(sql1);
@@ -79,17 +79,17 @@ public class MovieManager {
             return movie;
         }
     }
-    public String verifyNameOfMovie(String nameToUpdate){
-        String message = "La pelicula no existe";
+    public boolean verifyNameOfMovie(int movieId){
+        boolean message = false;
         try {
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
-            String sql1 = "SELECT name FROM movie";
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
+            String sql1 = "SELECT * FROM movie WHERE id=1;";
             Statement statement = connection.createStatement();
             ResultSet result1 = statement.executeQuery(sql1);
             while(result1.next()){
-                String name = result1.getString("name");
-                if (name == nameToUpdate){
-                    message = "Correct";
+                int id = result1.getInt("id");
+                if (id == movieId){
+                    message = true;
                 }
             }
         } catch (SQLException e) {
@@ -100,7 +100,7 @@ public class MovieManager {
     public void showMovies(){
         Connection connection;
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
             String sql1 = "SELECT * FROM movie";
             Statement statement = connection.createStatement();
             ResultSet result1 = statement.executeQuery(sql1);

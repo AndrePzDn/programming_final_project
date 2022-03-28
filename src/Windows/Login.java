@@ -4,11 +4,16 @@ import javax.swing.JOptionPane;
 import users.BasicFunctionOfUsers;
 import users.User;
 import users.UserAdmin;
+import users.UserClient;
 public class Login extends javax.swing.JFrame {
+
+    public UserClient user;
 
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
+        UserClient user = null;
+        this.user = user;
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -135,6 +140,7 @@ public class Login extends javax.swing.JFrame {
     private void SingUp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SingUp1ActionPerformed
         singUp WindowSingUp = new singUp();
         WindowSingUp.setVisible(true);
+        dispose();
     }//GEN-LAST:event_SingUp1ActionPerformed
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
@@ -148,6 +154,8 @@ public class Login extends javax.swing.JFrame {
         User user = login1.logIn(Email, Password);
         if(user != null){
             if (user.getClass().toString().equalsIgnoreCase("class users.UserClient")){    
+                UserClient userClient = (UserClient) user;
+                this.user = userClient;
                 Window1 Windows = new Window1();
                 Windows.setVisible(true);
                 dispose();
