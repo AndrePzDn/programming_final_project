@@ -32,12 +32,15 @@ public class Ranking extends javax.swing.JFrame {
         Movie1 = new javax.swing.JButton();
         Movie2 = new javax.swing.JButton();
         Movie3 = new javax.swing.JButton();
+        CommentsShowText = new javax.swing.JLabel();
+        CommentsShowText1 = new javax.swing.JLabel();
+        CommentsShowText2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         Background.setBackground(new java.awt.Color(255, 255, 255));
-        Background.setPreferredSize(new java.awt.Dimension(1300, 1200));
+        Background.setPreferredSize(new java.awt.Dimension(1300, 1230));
 
         jPanelTitle.setBackground(new java.awt.Color(51, 51, 255));
         jPanelTitle.setPreferredSize(new java.awt.Dimension(1300, 120));
@@ -105,6 +108,18 @@ public class Ranking extends javax.swing.JFrame {
             }
         });
 
+        CommentsShowText.setFont(new java.awt.Font("Arial", 0, 17)); // NOI18N
+        CommentsShowText.setText("<html><p style=\"width:384px\">Puntuada con: 72 Es la mejor Secula imprecionando a medida que se va construyendo la trama, momentos dramaticos, perspectivas cambiantes</p></html>");
+        CommentsShowText.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        CommentsShowText1.setFont(new java.awt.Font("Arial", 0, 17)); // NOI18N
+        CommentsShowText1.setText("<html><p style=\"width:384px\">Puntuada con: 93 'Spider-Man: No Way Home' mola. saber equilibrar el espect�culo para fans con un arco narrativo que permita seguir creciendo a su protagonista no era tan sencillo. Y lo consigue ofreciendo un grand�simo entretenimiento que deja claro que el Universo Marvel todav�a puede ofrecernos cosas muy estimulantes.</p></html>");
+        CommentsShowText1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        CommentsShowText2.setFont(new java.awt.Font("Arial", 0, 17)); // NOI18N
+        CommentsShowText2.setText("<html><p style=\"width:384px\">Puntuada con: 79 Lo mejor que tiene este largometraje de 105 minutos sin dudas es el mensaje que sobrevuela durante todo el tiempo y es el de la oposici�n constante al maltrato animal, lo que lleva a que los protagonistas tomen un rol decisivo con tal de que King, en este caso, llegue a su hogar para no estar en las manos equivocadas. En el fondo tambi�n es notable el sentimiento de la p�rdida por parte de In�s, principalmente, quien ha atravesado por un gran dolor junto a su hermano y es lo que al final puede desencadenar algunas l�grimas entre los espectadores</p></html>");
+        CommentsShowText2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
         javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
         Background.setLayout(BackgroundLayout);
         BackgroundLayout.setHorizontalGroup(
@@ -112,6 +127,14 @@ public class Ranking extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
                 .addComponent(jPanelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(BackgroundLayout.createSequentialGroup()
+                .addGap(201, 201, 201)
+                .addComponent(ScoreText1)
+                .addGap(252, 252, 252)
+                .addComponent(ScoreText2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ScoreText3)
+                .addGap(188, 188, 188))
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addGap(124, 124, 124)
                 .addComponent(Movie1)
@@ -121,13 +144,13 @@ public class Ranking extends javax.swing.JFrame {
                 .addComponent(Movie3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(BackgroundLayout.createSequentialGroup()
-                .addGap(201, 201, 201)
-                .addComponent(ScoreText1)
-                .addGap(252, 252, 252)
-                .addComponent(ScoreText2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ScoreText3)
-                .addGap(188, 188, 188))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(CommentsShowText, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(CommentsShowText2, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(CommentsShowText1, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67))
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,7 +166,12 @@ public class Ranking extends javax.swing.JFrame {
                     .addComponent(ScoreText1)
                     .addComponent(ScoreText2)
                     .addComponent(ScoreText3))
-                .addContainerGap(506, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CommentsShowText2, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CommentsShowText, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CommentsShowText1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(Background);
@@ -169,7 +197,7 @@ public class Ranking extends javax.swing.JFrame {
     private void Movie1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie1ActionPerformed
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
-        Movie movie1 = movieManager.readMovie("King - Regreso a casa");
+        Movie movie1 = movieManager.readMovie("Pacto con el diablo");
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -196,7 +224,7 @@ public class Ranking extends javax.swing.JFrame {
     private void Movie3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie3ActionPerformed
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
-        Movie movie1 = movieManager.readMovie("King - Regreso a casa");
+        Movie movie1 = movieManager.readMovie("Spider-Man No way home");
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -209,6 +237,9 @@ public class Ranking extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
+    private javax.swing.JLabel CommentsShowText;
+    private javax.swing.JLabel CommentsShowText1;
+    private javax.swing.JLabel CommentsShowText2;
     private javax.swing.JButton Exit;
     private javax.swing.JButton Movie1;
     private javax.swing.JButton Movie2;

@@ -79,4 +79,45 @@ public class MovieManager {
             return movie;
         }
     }
+    public String verifyNameOfMovie(String nameToUpdate){
+        String message = "La pelicula no existe";
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            String sql1 = "SELECT name FROM movie";
+            Statement statement = connection.createStatement();
+            ResultSet result1 = statement.executeQuery(sql1);
+            while(result1.next()){
+                String name = result1.getString("name");
+                if (name == nameToUpdate){
+                    message = "Correct";
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return message;
+    }
+    public void showMovies(){
+        Connection connection;
+        try {
+            connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            String sql1 = "SELECT * FROM movie";
+            Statement statement = connection.createStatement();
+            ResultSet result1 = statement.executeQuery(sql1);
+            while(result1.next()){
+                this.id = result1.getInt("id");
+                String name = result1.getString("name");
+                String gender = result1.getString("gender");
+                String duration = result1.getString("duration");
+                String premiere = result1.getString("premiere");
+                String synopsis = result1.getString("synopsis");
+                this.count = result1.getInt("count");
+                String imageDirectory = result1.getString("imageDirectory");
+                System.out.println(name +" "+gender+" "+duration+" "+premiere+" "+imageDirectory);
+                System.out.println(synopsis);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

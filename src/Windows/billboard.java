@@ -32,6 +32,9 @@ public class billboard extends javax.swing.JFrame {
         Movie4 = new javax.swing.JButton();
         Movie5 = new javax.swing.JButton();
         Movie6 = new javax.swing.JButton();
+        Movie7 = new javax.swing.JButton();
+        Movie8 = new javax.swing.JButton();
+        Movie9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1300, 1100));
@@ -40,7 +43,7 @@ public class billboard extends javax.swing.JFrame {
         jScrollPane1.setPreferredSize(new java.awt.Dimension(1300, 1100));
 
         background.setBackground(new java.awt.Color(255, 255, 255));
-        background.setPreferredSize(new java.awt.Dimension(1298, 1230));
+        background.setPreferredSize(new java.awt.Dimension(1298, 1630));
 
         jPanelTitle.setBackground(new java.awt.Color(51, 51, 255));
         jPanelTitle.setPreferredSize(new java.awt.Dimension(534, 120));
@@ -121,22 +124,50 @@ public class billboard extends javax.swing.JFrame {
             }
         });
 
+        Movie7.setBackground(new java.awt.Color(255, 255, 255));
+        Movie7.setBorder(null);
+        Movie7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Movie7ActionPerformed(evt);
+            }
+        });
+
+        Movie8.setBackground(new java.awt.Color(255, 255, 255));
+        Movie8.setBorder(null);
+        Movie8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Movie8ActionPerformed(evt);
+            }
+        });
+
+        Movie9.setBackground(new java.awt.Color(255, 255, 255));
+        Movie9.setBorder(null);
+        Movie9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Movie9ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanelTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1298, Short.MAX_VALUE)
-            .addGroup(backgroundLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
                 .addGap(90, 90, 90)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Movie4)
-                    .addComponent(Movie1))
+                    .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Movie4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Movie1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Movie8, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Movie2)
-                    .addComponent(Movie5))
+                    .addComponent(Movie5)
+                    .addComponent(Movie9, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(100, 100, 100)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Movie7, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Movie3)
                     .addComponent(Movie6))
                 .addGap(151, 151, 151))
@@ -155,7 +186,12 @@ public class billboard extends javax.swing.JFrame {
                     .addComponent(Movie5)
                     .addComponent(Movie4)
                     .addComponent(Movie6))
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Movie7, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Movie9, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Movie8, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(70, 70, 70))
         );
 
         jScrollPane1.setViewportView(background);
@@ -179,6 +215,7 @@ public class billboard extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitJButtonActionPerformed
 
     private void Movie1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie1ActionPerformed
+        try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
         Movie movie1 = movieManager.readMovie("Pacto con el diablo");
@@ -189,9 +226,13 @@ public class billboard extends javax.swing.JFrame {
         movie.Synopsis.setText("<html><p style=\"width:423px\">Sinopsis:"+movie1.getSynopsis()+"</p></html>");
         movie.Image.setIcon(new ImageIcon(getClass().getResource(movie1.getImageDirectory())));
         movie.setVisible(true);
+        }catch(Exception e){
+            System.out.print("Error, No se encotro la direccion de la imagen");
+        }
     }//GEN-LAST:event_Movie1ActionPerformed
 
     private void Movie2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie2ActionPerformed
+        try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
         Movie movie1 = movieManager.readMovie("La llamada final");
@@ -202,9 +243,13 @@ public class billboard extends javax.swing.JFrame {
         movie.Synopsis.setText("<html><p style=\"width:423px\">Sinopsis:"+movie1.getSynopsis()+"</p></html>");
         movie.Image.setIcon(new ImageIcon(getClass().getResource(movie1.getImageDirectory())));
         movie.setVisible(true);
+        }catch(Exception e){
+            System.out.print("Error, No se encotro la direccion de la imagen");
+        }
     }//GEN-LAST:event_Movie2ActionPerformed
 
     private void Movie3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie3ActionPerformed
+        try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
         Movie movie1 = movieManager.readMovie("King - Regreso a casa");
@@ -215,9 +260,13 @@ public class billboard extends javax.swing.JFrame {
         movie.Synopsis.setText("<html><p style=\"width:423px\">Sinopsis:"+movie1.getSynopsis()+"</p></html>");
         movie.Image.setIcon(new ImageIcon(getClass().getResource(movie1.getImageDirectory())));
         movie.setVisible(true);
+        }catch(Exception e){
+            System.out.print("Error, No se encotro la direccion de la imagen");
+        }
     }//GEN-LAST:event_Movie3ActionPerformed
 
     private void Movie4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie4ActionPerformed
+        try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
         Movie movie1 = movieManager.readMovie("Spider-Man No way home");
@@ -228,9 +277,13 @@ public class billboard extends javax.swing.JFrame {
         movie.Synopsis.setText("<html><p style=\"width:423px\">Sinopsis:"+movie1.getSynopsis()+"</p></html>");
         movie.Image.setIcon(new ImageIcon(getClass().getResource(movie1.getImageDirectory())));
         movie.setVisible(true);
+        }catch(Exception e){
+            System.out.print("Error, No se encotro la direccion de la imagen");
+        }
     }//GEN-LAST:event_Movie4ActionPerformed
 
     private void Movie5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie5ActionPerformed
+        try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
         Movie movie1 = movieManager.readMovie("Sword art online - Movie");
@@ -241,9 +294,13 @@ public class billboard extends javax.swing.JFrame {
         movie.Synopsis.setText("<html><p style=\"width:423px\">Sinopsis:"+movie1.getSynopsis()+"</p></html>");
         movie.Image.setIcon(new ImageIcon(getClass().getResource(movie1.getImageDirectory())));
         movie.setVisible(true);
+        }catch(Exception e){
+            System.out.print("Error, No se encotro la direccion de la imagen");
+        }
     }//GEN-LAST:event_Movie5ActionPerformed
 
     private void Movie6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie6ActionPerformed
+        try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
         Movie movie1 = movieManager.readMovie("Uncharted");
@@ -254,7 +311,61 @@ public class billboard extends javax.swing.JFrame {
         movie.Synopsis.setText("<html><p style=\"width:423px\">Sinopsis:"+movie1.getSynopsis()+"</p></html>");
         movie.Image.setIcon(new ImageIcon(getClass().getResource(movie1.getImageDirectory())));
         movie.setVisible(true);
+        }catch(Exception e  ){
+            System.out.print("Error, No se encotro la direccion de la imagen");
+        }
     }//GEN-LAST:event_Movie6ActionPerformed
+
+    private void Movie7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie7ActionPerformed
+        try {
+        Movie1 movie = new Movie1(this,true);
+        MovieManager movieManager = new MovieManager();
+        Movie movie1 = movieManager.readMovie("");
+        movie.TitleMovie.setText(movie1.getName());        
+        movie.Genre.setText("Genero: "+movie1.getGender());
+        movie.Duration.setText("Duracion: "+movie1.getDuration());
+        movie.Premier.setText("Estreno: "+movie1.getPremiere());
+        movie.Synopsis.setText("<html><p style=\"width:423px\">Sinopsis:"+movie1.getSynopsis()+"</p></html>");
+        movie.Image.setIcon(new ImageIcon(getClass().getResource(movie1.getImageDirectory())));
+        movie.setVisible(true);
+        }catch(Exception e){
+            System.out.print("Error, No se encotro la direccion de la imagen");
+        }
+    }//GEN-LAST:event_Movie7ActionPerformed
+
+    private void Movie8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie8ActionPerformed
+        try {
+        Movie1 movie = new Movie1(this,true);
+        MovieManager movieManager = new MovieManager();
+        Movie movie1 = movieManager.readMovie("");
+        movie.TitleMovie.setText(movie1.getName());        
+        movie.Genre.setText("Genero: "+movie1.getGender());
+        movie.Duration.setText("Duracion: "+movie1.getDuration());
+        movie.Premier.setText("Estreno: "+movie1.getPremiere());
+        movie.Synopsis.setText("<html><p style=\"width:423px\">Sinopsis:"+movie1.getSynopsis()+"</p></html>");
+        movie.Image.setIcon(new ImageIcon(getClass().getResource(movie1.getImageDirectory())));
+        movie.setVisible(true);
+        }catch(Exception e){
+            System.out.print("Error, No se encotro la direccion de la imagen");
+        }
+    }//GEN-LAST:event_Movie8ActionPerformed
+
+    private void Movie9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie9ActionPerformed
+        try {
+        Movie1 movie = new Movie1(this,true);
+        MovieManager movieManager = new MovieManager();
+        Movie movie1 = movieManager.readMovie("");
+        movie.TitleMovie.setText(movie1.getName());        
+        movie.Genre.setText("Genero: "+movie1.getGender());
+        movie.Duration.setText("Duracion: "+movie1.getDuration());
+        movie.Premier.setText("Estreno: "+movie1.getPremiere());
+        movie.Synopsis.setText("<html><p style=\"width:423px\">Sinopsis:"+movie1.getSynopsis()+"</p></html>");
+        movie.Image.setIcon(new ImageIcon(getClass().getResource(movie1.getImageDirectory())));
+        movie.setVisible(true); 
+        }catch(Exception e){
+            System.out.print("Error, No se encotro la direccion de la imagen");
+        }
+    }//GEN-LAST:event_Movie9ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -265,6 +376,9 @@ public class billboard extends javax.swing.JFrame {
     private javax.swing.JButton Movie4;
     private javax.swing.JButton Movie5;
     private javax.swing.JButton Movie6;
+    private javax.swing.JButton Movie7;
+    private javax.swing.JButton Movie8;
+    private javax.swing.JButton Movie9;
     private javax.swing.JPanel background;
     private javax.swing.JLabel billboardText;
     private javax.swing.JPanel jPanelTitle;
