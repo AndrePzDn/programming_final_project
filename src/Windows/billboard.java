@@ -2,11 +2,10 @@
 package Windows;
 
 import billboard.Movie1;
-import billboard.Movie2;
-import billboard.Movie3;
-import billboard.Movie4;
-import billboard.Movie5;
-import billboard.Movie6;
+import movies.Movie;
+import movies.MovieManager;
+
+import javax.swing.ImageIcon;
 
 public class billboard extends javax.swing.JFrame {
 
@@ -35,13 +34,16 @@ public class billboard extends javax.swing.JFrame {
         Movie6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1300, 1100));
         setResizable(false);
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(1300, 1100));
 
         background.setBackground(new java.awt.Color(255, 255, 255));
+        background.setPreferredSize(new java.awt.Dimension(1298, 1230));
 
         jPanelTitle.setBackground(new java.awt.Color(51, 51, 255));
+        jPanelTitle.setPreferredSize(new java.awt.Dimension(534, 120));
 
         billboardText.setFont(new java.awt.Font("Elephant", 1, 50)); // NOI18N
         billboardText.setForeground(new java.awt.Color(255, 255, 255));
@@ -74,7 +76,7 @@ public class billboard extends javax.swing.JFrame {
         jPanelTitleLayout.setVerticalGroup(
             jPanelTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(ExitJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(billboardText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+            .addComponent(billboardText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
 
         Movie1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Redimiencionado formato Mediano (1).jpg"))); // NOI18N
@@ -123,7 +125,7 @@ public class billboard extends javax.swing.JFrame {
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1298, Short.MAX_VALUE)
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addGap(90, 90, 90)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,21 +145,17 @@ public class billboard extends javax.swing.JFrame {
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addComponent(jPanelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                .addGap(81, 81, 81)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Movie1)
+                    .addComponent(Movie2)
+                    .addComponent(Movie3))
+                .addGap(88, 88, 88)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addComponent(Movie1)
-                        .addGap(80, 80, 80)
-                        .addComponent(Movie4))
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Movie2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Movie3, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(80, 80, 80)
-                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Movie6)
-                            .addComponent(Movie5))))
-                .addGap(101, 101, 101))
+                    .addComponent(Movie5)
+                    .addComponent(Movie4)
+                    .addComponent(Movie6))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(background);
@@ -181,33 +179,81 @@ public class billboard extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitJButtonActionPerformed
 
     private void Movie1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie1ActionPerformed
-        Movie1 Movie = new Movie1(this,true);
-        Movie.setVisible(true);
+        Movie1 movie = new Movie1(this,true);
+        MovieManager movieManager = new MovieManager();
+        Movie movie1 = movieManager.readMovie("Pacto con el diablo");
+        movie.TitleMovie.setText(movie1.getName());        
+        movie.Genre.setText("Genero: "+movie1.getGender());
+        movie.Duration.setText("Duracion: "+movie1.getDuration());
+        movie.Premier.setText("Estreno: "+movie1.getPremiere());
+        movie.Synopsis.setText("<html><p style=\"width:423px\">Sinopsis:"+movie1.getSynopsis()+"</p></html>");
+        movie.Image.setIcon(new ImageIcon(getClass().getResource(movie1.getImageDirectory())));
+        movie.setVisible(true);
     }//GEN-LAST:event_Movie1ActionPerformed
 
     private void Movie2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie2ActionPerformed
-        Movie2 Movie = new Movie2(this,true);
-        Movie.setVisible(true);
+        Movie1 movie = new Movie1(this,true);
+        MovieManager movieManager = new MovieManager();
+        Movie movie1 = movieManager.readMovie("La llamada final");
+        movie.TitleMovie.setText(movie1.getName());        
+        movie.Genre.setText("Genero: "+movie1.getGender());
+        movie.Duration.setText("Duracion: "+movie1.getDuration());
+        movie.Premier.setText("Estreno: "+movie1.getPremiere());
+        movie.Synopsis.setText("<html><p style=\"width:423px\">Sinopsis:"+movie1.getSynopsis()+"</p></html>");
+        movie.Image.setIcon(new ImageIcon(getClass().getResource(movie1.getImageDirectory())));
+        movie.setVisible(true);
     }//GEN-LAST:event_Movie2ActionPerformed
 
     private void Movie3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie3ActionPerformed
-        Movie3 Movie = new Movie3(this,true);
-        Movie.setVisible(true);
+        Movie1 movie = new Movie1(this,true);
+        MovieManager movieManager = new MovieManager();
+        Movie movie1 = movieManager.readMovie("King - Regreso a casa");
+        movie.TitleMovie.setText(movie1.getName());        
+        movie.Genre.setText("Genero: "+movie1.getGender());
+        movie.Duration.setText("Duracion: "+movie1.getDuration());
+        movie.Premier.setText("Estreno: "+movie1.getPremiere());
+        movie.Synopsis.setText("<html><p style=\"width:423px\">Sinopsis:"+movie1.getSynopsis()+"</p></html>");
+        movie.Image.setIcon(new ImageIcon(getClass().getResource(movie1.getImageDirectory())));
+        movie.setVisible(true);
     }//GEN-LAST:event_Movie3ActionPerformed
 
     private void Movie4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie4ActionPerformed
-        Movie4 Movie = new Movie4(this,true);
-        Movie.setVisible(true);
+        Movie1 movie = new Movie1(this,true);
+        MovieManager movieManager = new MovieManager();
+        Movie movie1 = movieManager.readMovie("Spider-Man No way home");
+        movie.TitleMovie.setText(movie1.getName());        
+        movie.Genre.setText("Genero: "+movie1.getGender());
+        movie.Duration.setText("Duracion: "+movie1.getDuration());
+        movie.Premier.setText("Estreno: "+movie1.getPremiere());
+        movie.Synopsis.setText("<html><p style=\"width:423px\">Sinopsis:"+movie1.getSynopsis()+"</p></html>");
+        movie.Image.setIcon(new ImageIcon(getClass().getResource(movie1.getImageDirectory())));
+        movie.setVisible(true);
     }//GEN-LAST:event_Movie4ActionPerformed
 
     private void Movie5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie5ActionPerformed
-        Movie5 Movie = new Movie5(this,true);
-        Movie.setVisible(true);
+        Movie1 movie = new Movie1(this,true);
+        MovieManager movieManager = new MovieManager();
+        Movie movie1 = movieManager.readMovie("Sword art online - Movie");
+        movie.TitleMovie.setText(movie1.getName());        
+        movie.Genre.setText("Genero: "+movie1.getGender());
+        movie.Duration.setText("Duracion: "+movie1.getDuration());
+        movie.Premier.setText("Estreno: "+movie1.getPremiere());
+        movie.Synopsis.setText("<html><p style=\"width:423px\">Sinopsis:"+movie1.getSynopsis()+"</p></html>");
+        movie.Image.setIcon(new ImageIcon(getClass().getResource(movie1.getImageDirectory())));
+        movie.setVisible(true);
     }//GEN-LAST:event_Movie5ActionPerformed
 
     private void Movie6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie6ActionPerformed
-        Movie6 Movie = new Movie6(this,true);
-        Movie.setVisible(true);
+        Movie1 movie = new Movie1(this,true);
+        MovieManager movieManager = new MovieManager();
+        Movie movie1 = movieManager.readMovie("Uncharted");
+        movie.TitleMovie.setText(movie1.getName());        
+        movie.Genre.setText("Genero: "+movie1.getGender());
+        movie.Duration.setText("Duracion: "+movie1.getDuration());
+        movie.Premier.setText("Estreno: "+movie1.getPremiere());
+        movie.Synopsis.setText("<html><p style=\"width:423px\">Sinopsis:"+movie1.getSynopsis()+"</p></html>");
+        movie.Image.setIcon(new ImageIcon(getClass().getResource(movie1.getImageDirectory())));
+        movie.setVisible(true);
     }//GEN-LAST:event_Movie6ActionPerformed
 
 

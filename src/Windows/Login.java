@@ -46,12 +46,12 @@ public class Login extends javax.swing.JFrame {
         EmailJTextField.setToolTipText("");
 
         PasswordText.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        PasswordText.setText("Contraseña");
+        PasswordText.setText("Password");
 
         JPasswordField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         SingUpText.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        SingUpText.setText("¿Aun no tienes una cuenta?");
+        SingUpText.setText("Aun no tienes una cuenta?");
 
         Login.setBackground(new java.awt.Color(255, 0, 0));
         Login.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -147,7 +147,7 @@ public class Login extends javax.swing.JFrame {
         }
         User user = login1.logIn(Email, Password);
         if(user != null){
-            if (user.getClass().toString().equalsIgnoreCase("class users.UserClient")){      
+            if (user.getClass().toString().equalsIgnoreCase("class users.UserClient")){    
                 Window1 Windows = new Window1();
                 Windows.setVisible(true);
                 dispose();

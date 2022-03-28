@@ -28,12 +28,13 @@ public class Window1 extends javax.swing.JFrame {
         Movie1Image = new javax.swing.JLabel();
         Movie2Image = new javax.swing.JLabel();
         Movie3Image = new javax.swing.JLabel();
-        EndPage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         Found.setBackground(new java.awt.Color(255, 255, 255));
+        Found.setPreferredSize(new java.awt.Dimension(1300, 1230));
+        Found.setRequestFocusEnabled(false);
 
         PanelTitle.setBackground(new java.awt.Color(51, 51, 255));
         PanelTitle.setPreferredSize(new java.awt.Dimension(300, 100));
@@ -61,7 +62,7 @@ public class Window1 extends javax.swing.JFrame {
             .addGroup(PanelTitleLayout.createSequentialGroup()
                 .addGap(143, 143, 143)
                 .addComponent(TitleCineText)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 506, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 508, Short.MAX_VALUE)
                 .addComponent(ExitJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(86, 86, 86))
         );
@@ -163,25 +164,21 @@ public class Window1 extends javax.swing.JFrame {
         Found.setLayout(FoundLayout);
         FoundLayout.setHorizontalGroup(
             FoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 1298, Short.MAX_VALUE)
+            .addComponent(PanelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE)
             .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(FoundLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addGroup(FoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(FoundLayout.createSequentialGroup()
                         .addComponent(BillboardTextTitle)
-                        .addContainerGap(958, Short.MAX_VALUE))
+                        .addContainerGap(960, Short.MAX_VALUE))
                     .addGroup(FoundLayout.createSequentialGroup()
                         .addComponent(Movie1Image)
-                        .addGap(57, 57, 57)
+                        .addGap(58, 58, 58)
                         .addComponent(Movie2Image)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Movie3Image)
                         .addGap(56, 56, 56))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FoundLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(EndPage)
-                .addGap(613, 613, 613))
         );
         FoundLayout.setVerticalGroup(
             FoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,14 +188,12 @@ public class Window1 extends javax.swing.JFrame {
                 .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68)
                 .addComponent(BillboardTextTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addGap(55, 55, 55)
                 .addGroup(FoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Movie1Image)
                     .addComponent(Movie2Image)
+                    .addComponent(Movie1Image)
                     .addComponent(Movie3Image))
-                .addGap(308, 308, 308)
-                .addComponent(EndPage)
-                .addGap(26, 26, 26))
+                .addContainerGap(310, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(Found);
@@ -207,7 +202,7 @@ public class Window1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,7 +235,6 @@ public class Window1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BillboardButton;
     private javax.swing.JLabel BillboardTextTitle;
-    private javax.swing.JLabel EndPage;
     private javax.swing.JButton ExitJButton;
     private javax.swing.JPanel Found;
     private javax.swing.JLabel Movie1Image;
