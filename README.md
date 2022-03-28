@@ -4,6 +4,9 @@ Gabriela Trujillo
 Andre Perez
 Josue Prado
 
+# Recomends
+Run with visual studio code for libraries errors.
+
 # Some users you can use:
 ⚫ Email: braciwitefa-6891@yopmail.com - Password: PeaseYwe
 
@@ -33,6 +36,13 @@ Josue Prado
 
 
 ⚫ Email: biprullamiffo-8039@yopmail.com - Password: ETANTHEm
+
+# Some images you can use
+/images/pelicula (7).jpg
+
+/images/pelicula (8).jpg
+
+/images/pelicula (9).jpg
 
 # Requierments
 You should download a [driver for SQLite](https://github.com/xerial/sqlite-jdbc/releases) to run the program.
