@@ -6,17 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 public class BasicFunctionOfUsers {
 
     public int id;
-    ArrayList<User> userList;
 
-    public BasicFunctionOfUsers(){
-        ArrayList<User> list = new ArrayList<User>();
-        this.userList = list;
-    }
     public User logIn(String userEmail, String password){
         User user = null;
         try {

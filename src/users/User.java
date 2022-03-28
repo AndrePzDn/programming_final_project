@@ -1,5 +1,10 @@
 package users;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 public abstract class User {
     private int id;
     private String name;
@@ -36,14 +41,46 @@ public abstract class User {
     }
     public void setName(String name){
         this.name = name;
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            String sql2 = "UPDATE userClient SET name = '"+name+"' WHERE id = "+getId()+"";
+            PreparedStatement pstm= connection.prepareStatement(sql2);
+            pstm.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     public void setEmail(String email){
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            String sql2 = "UPDATE userClient SET gender = '"+email+"' WHERE id = "+getId()+"";
+            PreparedStatement pstm= connection.prepareStatement(sql2);
+            pstm.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         this.email = email;
     }
     public void setUserPassword(String userPassword){
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            String sql2 = "UPDATE userClient SET userPassword = '"+userPassword+"' WHERE id = "+getId()+"";
+            PreparedStatement pstm= connection.prepareStatement(sql2);
+            pstm.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         this.userPassword = userPassword;
     }
     public void setNickname(String nickname){
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            String sql2 = "UPDATE userClient SET nickname = '"+nickname+"' WHERE id = "+getId()+"";
+            PreparedStatement pstm= connection.prepareStatement(sql2);
+            pstm.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         this.nickName = nickname;
     }
 }

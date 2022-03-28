@@ -1,5 +1,10 @@
 package users;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 public class UserClient extends User {
 
     private int points;
@@ -18,9 +23,25 @@ public class UserClient extends User {
         return this.cups;
     }
     public void setPoints(int points){
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            String sql2 = "UPDATE userClient SET points = '"+points+"' WHERE id = "+getId()+"";
+            PreparedStatement pstm= connection.prepareStatement(sql2);
+            pstm.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         this.points = points;
     }
     public void setCups(int cups){
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            String sql2 = "UPDATE userCLient SET gender = '"+cups+"' WHERE id = "+getId()+"";
+            PreparedStatement pstm= connection.prepareStatement(sql2);
+            pstm.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         this.cups = cups;
     }
 }
