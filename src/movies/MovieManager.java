@@ -12,7 +12,7 @@ public class MovieManager {
     int id;
     int count;
 
-    public void createMovie(String name, String gender, String duration, String premiere, String synopsis){
+    public void createMovie(String name, String gender, String duration, String premiere, String synopsis, String imageDirectory){
         try {
             Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
             String sql1 = "SELECT * FROM movie";
@@ -22,7 +22,7 @@ public class MovieManager {
                 this.id = result1.getInt("id");
                 this.count = result1.getInt("count");
             }
-            String sql2 = "INSERT INTO movie VALUES('"+(this.id+1)+"','"+name+"','"+gender+"','"+duration+"','"+premiere+"','"+synopsis+"','0','0')";
+            String sql2 = "INSERT INTO movie VALUES('"+(this.id+1)+"','"+name+"','"+gender+"','"+duration+"','"+premiere+"','"+synopsis+"','0','0','"+imageDirectory+"')";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();
         } catch (SQLException e) {
@@ -67,8 +67,9 @@ public class MovieManager {
                 String synopsis = result1.getString("synopsis");
                 int ranking = result1.getInt("ranking");
                 this.count = result1.getInt("count");
+                String imageDirectory = result1.getString("imageDirectory");
                 if (name.equals(movieName)){
-                    movie = new Movie(id, count, name, gender, duration, premiere, synopsis, ranking);
+                    movie = new Movie(id, count, name, gender, duration, premiere, synopsis, ranking, imageDirectory);
                     return movie;
                 }
             }
