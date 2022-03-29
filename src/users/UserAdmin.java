@@ -55,7 +55,7 @@ public class UserAdmin extends User{
                         if (option == 1){
                             System.out.println("Nuevo nombre:");
                             String movieName = sc.nextLine();
-                            String newValue = sc.nextLine();
+                            String newValue = sc.nextLine();                         
                             movieManager.updateMovie(movieId, "name", newValue);
                         }else if (option == 2){
                             System.out.println("Nuevo gender:");

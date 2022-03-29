@@ -16,11 +16,15 @@ public class billboard extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         BasicFunctionOfUsers b = new BasicFunctionOfUsers();
         String nickname = b.getNickNameOfUserLogged();
+        MovieManager IconMovie = new MovieManager();
         User.setText(nickname);
+        Movie7.setIcon(new ImageIcon(getClass().getResource(IconMovie.getImageDirectory(7))));
+        Movie8.setIcon(new ImageIcon(getClass().getResource(IconMovie.getImageDirectory(8))));
+        Movie9.setIcon(new ImageIcon(getClass().getResource(IconMovie.getImageDirectory(9))));
     }
 
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -41,7 +45,6 @@ public class billboard extends javax.swing.JFrame {
         ImageUser = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1300, 1100));
         setResizable(false);
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(1300, 1100));
@@ -172,24 +175,6 @@ public class billboard extends javax.swing.JFrame {
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Movie4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Movie1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(Movie8, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Movie2)
-                    .addComponent(Movie5)
-                    .addComponent(Movie9, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(100, 100, 100)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Movie7, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Movie3)
-                    .addComponent(Movie6))
-                .addGap(151, 151, 151))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 1274, Short.MAX_VALUE)
                 .addContainerGap())
@@ -199,6 +184,27 @@ public class billboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(User)
                 .addGap(50, 50, 50))
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addComponent(Movie1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(167, 167, 167))
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Movie4, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Movie7, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Movie2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Movie5, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Movie8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(134, 134, 134)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(Movie6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Movie3, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Movie9, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(183, 183, 183))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,22 +215,22 @@ public class billboard extends javax.swing.JFrame {
                     .addComponent(User))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(301, 301, 301)
+                .addGap(107, 107, 107)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Movie1)
-                    .addComponent(Movie2)
-                    .addComponent(Movie3))
-                .addGap(88, 88, 88)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Movie5)
-                    .addComponent(Movie4)
-                    .addComponent(Movie6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Movie2, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Movie1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Movie3, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(94, 94, 94)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Movie6, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Movie4, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Movie5, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(70, 70, 70)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Movie8, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Movie7, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Movie9, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Movie8, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70))
+                    .addComponent(Movie9, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(background);
@@ -241,13 +247,13 @@ public class billboard extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void ExitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitJButtonActionPerformed
+    private void ExitJButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
         dispose();
-    }//GEN-LAST:event_ExitJButtonActionPerformed
+    }                                           
 
-    private void Movie1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie1ActionPerformed
+    private void Movie1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
@@ -262,9 +268,9 @@ public class billboard extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.print("Error, No se encotro la direccion de la imagen");
         }
-    }//GEN-LAST:event_Movie1ActionPerformed
+    }                                      
 
-    private void Movie2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie2ActionPerformed
+    private void Movie2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
@@ -279,9 +285,9 @@ public class billboard extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.print("Error, No se encotro la direccion de la imagen");
         }
-    }//GEN-LAST:event_Movie2ActionPerformed
+    }                                      
 
-    private void Movie3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie3ActionPerformed
+    private void Movie3ActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
@@ -296,9 +302,9 @@ public class billboard extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.print("Error, No se encotro la direccion de la imagen");
         }
-    }//GEN-LAST:event_Movie3ActionPerformed
+    }                                      
 
-    private void Movie4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie4ActionPerformed
+    private void Movie4ActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
@@ -313,9 +319,9 @@ public class billboard extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.print("Error, No se encotro la direccion de la imagen");
         }
-    }//GEN-LAST:event_Movie4ActionPerformed
+    }                                      
 
-    private void Movie5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie5ActionPerformed
+    private void Movie5ActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
@@ -330,9 +336,9 @@ public class billboard extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.print("Error, No se encotro la direccion de la imagen");
         }
-    }//GEN-LAST:event_Movie5ActionPerformed
+    }                                      
 
-    private void Movie6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie6ActionPerformed
+    private void Movie6ActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
@@ -347,9 +353,9 @@ public class billboard extends javax.swing.JFrame {
         }catch(Exception e  ){
             System.out.print("Error, No se encotro la direccion de la imagen");
         }
-    }//GEN-LAST:event_Movie6ActionPerformed
+    }                                      
 
-    private void Movie7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie7ActionPerformed
+    private void Movie7ActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
@@ -364,9 +370,9 @@ public class billboard extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.print("Error, No se encotro la direccion de la imagen");
         }
-    }//GEN-LAST:event_Movie7ActionPerformed
+    }                                      
 
-    private void Movie8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie8ActionPerformed
+    private void Movie8ActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
@@ -381,9 +387,9 @@ public class billboard extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.print("Error, No se encotro la direccion de la imagen");
         }
-    }//GEN-LAST:event_Movie8ActionPerformed
+    }                                      
 
-    private void Movie9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie9ActionPerformed
+    private void Movie9ActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
@@ -398,10 +404,10 @@ public class billboard extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.print("Error, No se encotro la direccion de la imagen");
         }
-    }//GEN-LAST:event_Movie9ActionPerformed
+    }                                      
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton ExitJButton;
     private javax.swing.JLabel ImageUser;
     private javax.swing.JButton Movie1;
@@ -418,5 +424,5 @@ public class billboard extends javax.swing.JFrame {
     private javax.swing.JLabel billboardText1;
     private javax.swing.JPanel jPanelTitle;
     private javax.swing.JScrollPane jScrollPane1;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }

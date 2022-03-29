@@ -79,11 +79,30 @@ public class MovieManager {
             return movie;
         }
     }
+    public String getImageDirectory(int id){
+        String image = "";
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
+            String sql = "SELECT imageDirectory FROM movie WHERE id="+id+"";
+            Statement statement = connection.createStatement();
+            ResultSet result1 = statement.executeQuery(sql);
+            while(result1.next()){
+                String imageDirectory = result1.getString("imageDirectory");
+                connection.close();
+                return imageDirectory;
+                }
+            connection.close();
+            return image;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return image;
+        }
+    }
     public boolean verifyNameOfMovie(int movieId){
         boolean message = false;
         try {
             Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
-            String sql1 = "SELECT * FROM movie WHERE id=1;";
+            String sql1 = "SELECT * FROM movie WHERE id= "+movieId+"";
             Statement statement = connection.createStatement();
             ResultSet result1 = statement.executeQuery(sql1);
             while(result1.next()){
@@ -113,7 +132,7 @@ public class MovieManager {
                 String synopsis = result1.getString("synopsis");
                 this.count = result1.getInt("count");
                 String imageDirectory = result1.getString("imageDirectory");
-                System.out.println(name +" "+gender+" "+duration+" "+premiere+" "+imageDirectory);
+                System.out.println("ID "+this.id+" |  "+name +" "+gender+" "+duration+" "+premiere+" "+imageDirectory);
                 System.out.println(synopsis);
             }
         } catch (SQLException e) {
