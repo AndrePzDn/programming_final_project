@@ -25,6 +25,7 @@ public class MovieManager {
             String sql2 = "INSERT INTO movie VALUES('"+(this.id+1)+"','"+name+"','"+gender+"','"+duration+"','"+premiere+"','"+synopsis+"','0','0','"+imageDirectory+"')";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -35,6 +36,7 @@ public class MovieManager {
             String sql2 = "DELETE FROM movie WHERE id='"+id+"'";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -46,6 +48,7 @@ public class MovieManager {
             sql2 = "UPDATE movie SET "+toUpdate+" = '"+update+"' WHERE id = "+id+"";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -70,13 +73,17 @@ public class MovieManager {
                 String imageDirectory = result1.getString("imageDirectory");
                 if (this.id == id){
                     movie = new Movie(id, count, name, gender, duration, premiere, synopsis, ranking, imageDirectory);
+                    connection.close();
                     return movie;
+            
                 }
             }
+            connection.close();
             return movie;
         } catch (SQLException e) {
             e.printStackTrace();
             return movie;
+            
         }
     }
     public String getImageDirectory(int id){
@@ -111,6 +118,7 @@ public class MovieManager {
                     message = true;
                 }
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -135,6 +143,7 @@ public class MovieManager {
                 System.out.println("ID "+this.id+" |  "+name +" "+gender+" "+duration+" "+premiere+" "+imageDirectory);
                 System.out.println(synopsis);
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

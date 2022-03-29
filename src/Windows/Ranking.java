@@ -4,6 +4,7 @@ package Windows;
 import billboard.Movie1;
 import movies.Movie;
 import movies.MovieManager;
+import movies.ScoreManager;
 import users.BasicFunctionOfUsers;
 
 import javax.swing.ImageIcon;

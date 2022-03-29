@@ -4,9 +4,13 @@ package billboard;
 import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 
+import Windows.billboard;
+import movies.Movie;
+import movies.MovieManager;
+import movies.ScoreManager;
+
 public class Movie1 extends javax.swing.JDialog {
-
-
+    public int score;
     public Movie1(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -265,8 +269,14 @@ public class Movie1 extends javax.swing.JDialog {
         try {
             String ranking = ScoreTextField.getText();
             int rankingInt = Integer.parseInt(ranking);
+            this.score=rankingInt;
+            ScoreManager sopademacaco= new ScoreManager();
+            MovieManager zzz= new MovieManager();
+            int asd = Windows.billboard.idMovie;
+            Movie mov1=zzz.readMovie(asd);
+            sopademacaco.createScore(rankingInt,mov1.getName());
             if(rankingInt >= 1 && rankingInt <= 100){
-                ScoreShowText.setText("Muchas gracias usted le dio a la pelicula: "+ranking+" puntos");
+                ScoreShowText.setText("<html><p style=\\\"width:384px\\\">Muchas gracias usted le dio a la pelicula: "+ranking+" puntos</p></html>");
             }else{
                 JOptionPane.showMessageDialog(null, "Error, por favor introduzca un valor entre 1 y 100");
             }

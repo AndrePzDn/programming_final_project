@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 
 public class billboard extends javax.swing.JFrame {
 
-
+    public static int idMovie;
     public billboard() {
         initComponents();   
         this.setLocationRelativeTo(null);
@@ -258,6 +258,7 @@ public class billboard extends javax.swing.JFrame {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
         Movie movie1 = movieManager.readMovie(2);
+        this.idMovie = 2;
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -275,6 +276,7 @@ public class billboard extends javax.swing.JFrame {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
         Movie movie1 = movieManager.readMovie(1);
+        this.idMovie = 1;
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -292,6 +294,7 @@ public class billboard extends javax.swing.JFrame {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
         Movie movie1 = movieManager.readMovie(3);
+        this.idMovie = 3;
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -309,6 +312,7 @@ public class billboard extends javax.swing.JFrame {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
         Movie movie1 = movieManager.readMovie(4);
+        this.idMovie = 4;
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -326,6 +330,7 @@ public class billboard extends javax.swing.JFrame {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
         Movie movie1 = movieManager.readMovie(5);
+        this.idMovie = 5;
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -343,6 +348,7 @@ public class billboard extends javax.swing.JFrame {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
         Movie movie1 = movieManager.readMovie(6);
+        this.idMovie = 6;
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -360,6 +366,7 @@ public class billboard extends javax.swing.JFrame {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
         Movie movie1 = movieManager.readMovie(7);
+        this.idMovie = 7;
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -377,6 +384,7 @@ public class billboard extends javax.swing.JFrame {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
         Movie movie1 = movieManager.readMovie(8);
+        this.idMovie = 8;
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -394,6 +402,7 @@ public class billboard extends javax.swing.JFrame {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
         Movie movie1 = movieManager.readMovie(9);
+        this.idMovie = 9;
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());

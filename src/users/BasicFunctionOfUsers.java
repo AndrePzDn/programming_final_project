@@ -66,7 +66,7 @@ public class BasicFunctionOfUsers {
             while(result1.next()){
                 this.id = result1.getInt("id");
             }
-            String sql2 = "INSERT INTO userClient VALUES("+(this.id+1)+",0,0,'"+userEmail+"','"+userName+"','"+password+"','"+userNickName+"','"+userGender+"')";
+            String sql2 = "INSERT INTO userClient VALUES("+(this.id+1)+",0,0,'"+userEmail+"','"+userName+"','"+password+"','"+userNickName+"','"+userGender+"',0)";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();
             connection.close();
