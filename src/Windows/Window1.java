@@ -1,12 +1,16 @@
 
 package Windows;
 
+import users.BasicFunctionOfUsers;
 
 public class Window1 extends javax.swing.JFrame {
 
     public Window1() {
         initComponents();
         this.setLocationRelativeTo(null);
+        BasicFunctionOfUsers b = new BasicFunctionOfUsers();
+        String nickname = b.getNickNameOfUserLogged();
+        User.setText(nickname);
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -28,6 +32,8 @@ public class Window1 extends javax.swing.JFrame {
         Movie1Image = new javax.swing.JLabel();
         Movie2Image = new javax.swing.JLabel();
         Movie3Image = new javax.swing.JLabel();
+        ImageUser = new javax.swing.JLabel();
+        User = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -160,6 +166,10 @@ public class Window1 extends javax.swing.JFrame {
 
         Movie3Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pelicula (4).jpg"))); // NOI18N
 
+        ImageUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/User321.png"))); // NOI18N
+
+        User.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+
         javax.swing.GroupLayout FoundLayout = new javax.swing.GroupLayout(Found);
         Found.setLayout(FoundLayout);
         FoundLayout.setHorizontalGroup(
@@ -179,10 +189,20 @@ public class Window1 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Movie3Image)
                         .addGap(56, 56, 56))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FoundLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ImageUser)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(User)
+                .addGap(60, 60, 60))
         );
         FoundLayout.setVerticalGroup(
             FoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FoundLayout.createSequentialGroup()
+                .addGroup(FoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ImageUser)
+                    .addComponent(User))
+                .addGap(1, 1, 1)
                 .addComponent(PanelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -193,7 +213,7 @@ public class Window1 extends javax.swing.JFrame {
                     .addComponent(Movie2Image)
                     .addComponent(Movie1Image)
                     .addComponent(Movie3Image))
-                .addContainerGap(310, Short.MAX_VALUE))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(Found);
@@ -228,6 +248,8 @@ public class Window1 extends javax.swing.JFrame {
     }//GEN-LAST:event_RewardsButtonActionPerformed
 
     private void ExitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitJButtonActionPerformed
+        BasicFunctionOfUsers basicFunctionOfUsers = new BasicFunctionOfUsers();
+        basicFunctionOfUsers.logOut();
         System.exit(0);
     }//GEN-LAST:event_ExitJButtonActionPerformed
 
@@ -237,6 +259,7 @@ public class Window1 extends javax.swing.JFrame {
     private javax.swing.JLabel BillboardTextTitle;
     private javax.swing.JButton ExitJButton;
     private javax.swing.JPanel Found;
+    private javax.swing.JLabel ImageUser;
     private javax.swing.JLabel Movie1Image;
     private javax.swing.JLabel Movie2Image;
     private javax.swing.JLabel Movie3Image;
@@ -246,6 +269,7 @@ public class Window1 extends javax.swing.JFrame {
     private javax.swing.JButton RewardsButton;
     private javax.swing.JLabel SocialNetworksImage;
     private javax.swing.JLabel TitleCineText;
+    private javax.swing.JLabel User;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

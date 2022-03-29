@@ -2,6 +2,7 @@
 package Windows;
 
 import users.BasicFunctionOfUsers;
+
 public class singUp extends javax.swing.JFrame {
 
     public singUp() {

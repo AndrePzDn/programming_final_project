@@ -8,6 +8,7 @@ import users.UserClient;
 public class Login extends javax.swing.JFrame {
 
     public UserClient user;
+    public BasicFunctionOfUsers basicFunctionOfUsers = new BasicFunctionOfUsers();
 
     public Login() {
         initComponents();
@@ -28,6 +29,7 @@ public class Login extends javax.swing.JFrame {
         SingUpText = new javax.swing.JLabel();
         Login = new java.awt.Button();
         SingUp1 = new java.awt.Button();
+        showPassJCheckBox = new javax.swing.JCheckBox();
 
         SingUp.setBackground(new java.awt.Color(255, 0, 0));
         SingUp.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -53,7 +55,7 @@ public class Login extends javax.swing.JFrame {
         PasswordText.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         PasswordText.setText("Password");
 
-        JPasswordField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        JPasswordField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
         SingUpText.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         SingUpText.setText("Aun no tienes una cuenta?");
@@ -78,29 +80,40 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        showPassJCheckBox.setBackground(new java.awt.Color(255, 255, 255));
+        showPassJCheckBox.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        showPassJCheckBox.setText("Show Password");
+        showPassJCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showPassJCheckBoxActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(114, 114, 114))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SingUp1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(135, 135, 135))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(PasswordText)
-                            .addComponent(EmailJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
-                            .addComponent(JPasswordField)
-                            .addComponent(EmailText, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(131, 131, 131)
-                        .addComponent(SingUp1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(SingUpText)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(showPassJCheckBox)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(PasswordText)
+                                .addComponent(EmailJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                                .addComponent(JPasswordField)
+                                .addComponent(EmailText, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(SingUpText)
+                                    .addGap(23, 23, 23))))))
                 .addContainerGap(64, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -114,11 +127,13 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(PasswordText)
                 .addGap(38, 38, 38)
                 .addComponent(JPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
+                .addGap(18, 18, 18)
+                .addComponent(showPassJCheckBox)
+                .addGap(6, 6, 6)
                 .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
+                .addGap(62, 62, 62)
                 .addComponent(SingUpText)
-                .addGap(30, 30, 30)
+                .addGap(29, 29, 29)
                 .addComponent(SingUp1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(42, Short.MAX_VALUE))
         );
@@ -140,18 +155,16 @@ public class Login extends javax.swing.JFrame {
     private void SingUp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SingUp1ActionPerformed
         singUp WindowSingUp = new singUp();
         WindowSingUp.setVisible(true);
-        dispose();
     }//GEN-LAST:event_SingUp1ActionPerformed
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
-        BasicFunctionOfUsers login1 = new BasicFunctionOfUsers();
         String Email = EmailJTextField.getText();
         String Password = "";
         char[] PasswordArray = JPasswordField.getPassword();
         for(int i = 0; i < PasswordArray.length; i++){
             Password += PasswordArray[i];
         }
-        User user = login1.logIn(Email, Password);
+        User user = this.basicFunctionOfUsers.logIn(Email, Password);
         if(user != null){
             if (user.getClass().toString().equalsIgnoreCase("class users.UserClient")){    
                 UserClient userClient = (UserClient) user;
@@ -160,11 +173,12 @@ public class Login extends javax.swing.JFrame {
                 Windows.setVisible(true);
                 dispose();
             }else{
+                dispose();
                 UserAdmin userAdmin = (UserAdmin) user;
                 userAdmin.adminProgram();
                 Login Loginwindows= new Login();
                 Loginwindows.setVisible(true);
-                dispose();
+                // dispose();
             }
         }else{
             JOptionPane.showMessageDialog(null, "Error, Datos Incorrectos");
@@ -177,6 +191,14 @@ public class Login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_SingUpActionPerformed
 
+    private void showPassJCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPassJCheckBoxActionPerformed
+        if(showPassJCheckBox.isSelected()){
+            JPasswordField.setEchoChar((char)0);
+        }else{
+            JPasswordField.setEchoChar('*');
+        }
+    }//GEN-LAST:event_showPassJCheckBoxActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField EmailJTextField;
@@ -188,5 +210,6 @@ public class Login extends javax.swing.JFrame {
     private java.awt.Button SingUp1;
     private javax.swing.JLabel SingUpText;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JCheckBox showPassJCheckBox;
     // End of variables declaration//GEN-END:variables
 }

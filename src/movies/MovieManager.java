@@ -29,10 +29,10 @@ public class MovieManager {
             e.printStackTrace();
         }
     }
-    public void removeMovie(String name){
+    public void removeMovie(int id){
         try {
             Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/databaseMovies.db");
-            String sql2 = "DELETE FROM movie WHERE name='"+name+"'";
+            String sql2 = "DELETE FROM movie WHERE id='"+id+"'";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();
         } catch (SQLException e) {
@@ -50,7 +50,7 @@ public class MovieManager {
             e.printStackTrace();
         }
     }
-    public Movie readMovie(String movieName){
+    public Movie readMovie(int id){
         Connection connection;
         Movie movie = null;
         try {
@@ -68,7 +68,7 @@ public class MovieManager {
                 int ranking = result1.getInt("ranking");
                 this.count = result1.getInt("count");
                 String imageDirectory = result1.getString("imageDirectory");
-                if (name.equals(movieName)){
+                if (this.id == id){
                     movie = new Movie(id, count, name, gender, duration, premiere, synopsis, ranking, imageDirectory);
                     return movie;
                 }

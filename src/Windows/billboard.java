@@ -4,6 +4,8 @@ package Windows;
 import billboard.Movie1;
 import movies.Movie;
 import movies.MovieManager;
+import users.BasicFunctionOfUsers;
+
 import javax.swing.ImageIcon;
 
 public class billboard extends javax.swing.JFrame {
@@ -12,6 +14,9 @@ public class billboard extends javax.swing.JFrame {
     public billboard() {
         initComponents();   
         this.setLocationRelativeTo(null);
+        BasicFunctionOfUsers b = new BasicFunctionOfUsers();
+        String nickname = b.getNickNameOfUserLogged();
+        User.setText(nickname);
     }
 
 
@@ -21,8 +26,8 @@ public class billboard extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         background = new javax.swing.JPanel();
         jPanelTitle = new javax.swing.JPanel();
-        billboardText = new javax.swing.JLabel();
         ExitJButton = new javax.swing.JButton();
+        billboardText1 = new javax.swing.JLabel();
         Movie1 = new javax.swing.JButton();
         Movie2 = new javax.swing.JButton();
         Movie3 = new javax.swing.JButton();
@@ -32,6 +37,8 @@ public class billboard extends javax.swing.JFrame {
         Movie7 = new javax.swing.JButton();
         Movie8 = new javax.swing.JButton();
         Movie9 = new javax.swing.JButton();
+        User = new javax.swing.JLabel();
+        ImageUser = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1300, 1100));
@@ -43,11 +50,8 @@ public class billboard extends javax.swing.JFrame {
         background.setPreferredSize(new java.awt.Dimension(1298, 1630));
 
         jPanelTitle.setBackground(new java.awt.Color(51, 51, 255));
+        jPanelTitle.setAlignmentY(0.2F);
         jPanelTitle.setPreferredSize(new java.awt.Dimension(534, 120));
-
-        billboardText.setFont(new java.awt.Font("Elephant", 1, 50)); // NOI18N
-        billboardText.setForeground(new java.awt.Color(255, 255, 255));
-        billboardText.setText("Cartelera");
 
         ExitJButton.setBackground(new java.awt.Color(51, 51, 255));
         ExitJButton.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
@@ -62,21 +66,32 @@ public class billboard extends javax.swing.JFrame {
             }
         });
 
+        billboardText1.setFont(new java.awt.Font("Elephant", 1, 50)); // NOI18N
+        billboardText1.setForeground(new java.awt.Color(255, 255, 255));
+        billboardText1.setText("Cartelera");
+
         javax.swing.GroupLayout jPanelTitleLayout = new javax.swing.GroupLayout(jPanelTitle);
         jPanelTitle.setLayout(jPanelTitleLayout);
         jPanelTitleLayout.setHorizontalGroup(
             jPanelTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTitleLayout.createSequentialGroup()
-                .addGap(121, 121, 121)
-                .addComponent(billboardText)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ExitJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
+            .addGroup(jPanelTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelTitleLayout.createSequentialGroup()
+                    .addGap(131, 131, 131)
+                    .addComponent(billboardText1)
+                    .addContainerGap(912, Short.MAX_VALUE)))
         );
         jPanelTitleLayout.setVerticalGroup(
             jPanelTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ExitJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(billboardText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+            .addComponent(ExitJButton, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+            .addGroup(jPanelTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelTitleLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(billboardText1, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
 
         Movie1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Redimiencionado formato Mediano (1).jpg"))); // NOI18N
@@ -145,11 +160,17 @@ public class billboard extends javax.swing.JFrame {
             }
         });
 
+        User.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        User.setToolTipText("");
+        User.setAlignmentY(0.2F);
+
+        ImageUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/User321.png"))); // NOI18N
+        ImageUser.setAlignmentY(0.2F);
+
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1298, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
                 .addGap(90, 90, 90)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,12 +189,27 @@ public class billboard extends javax.swing.JFrame {
                     .addComponent(Movie3)
                     .addComponent(Movie6))
                 .addGap(151, 151, 151))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 1274, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ImageUser)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(User)
+                .addGap(50, 50, 50))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ImageUser)
+                    .addComponent(User))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81)
+                .addGap(301, 301, 301)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Movie1)
                     .addComponent(Movie2)
@@ -183,7 +219,7 @@ public class billboard extends javax.swing.JFrame {
                     .addComponent(Movie5)
                     .addComponent(Movie4)
                     .addComponent(Movie6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Movie7, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Movie9, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -201,7 +237,7 @@ public class billboard extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -215,7 +251,7 @@ public class billboard extends javax.swing.JFrame {
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
-        Movie movie1 = movieManager.readMovie("Pacto con el diablo");
+        Movie movie1 = movieManager.readMovie(2);
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -232,7 +268,7 @@ public class billboard extends javax.swing.JFrame {
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
-        Movie movie1 = movieManager.readMovie("La llamada final");
+        Movie movie1 = movieManager.readMovie(1);
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -249,7 +285,7 @@ public class billboard extends javax.swing.JFrame {
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
-        Movie movie1 = movieManager.readMovie("King - Regreso a casa");
+        Movie movie1 = movieManager.readMovie(3);
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -266,7 +302,7 @@ public class billboard extends javax.swing.JFrame {
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
-        Movie movie1 = movieManager.readMovie("Spider-Man No way home");
+        Movie movie1 = movieManager.readMovie(4);
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -283,7 +319,7 @@ public class billboard extends javax.swing.JFrame {
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
-        Movie movie1 = movieManager.readMovie("Sword art online - Movie");
+        Movie movie1 = movieManager.readMovie(5);
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -300,7 +336,7 @@ public class billboard extends javax.swing.JFrame {
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
-        Movie movie1 = movieManager.readMovie("Uncharted");
+        Movie movie1 = movieManager.readMovie(6);
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -317,7 +353,7 @@ public class billboard extends javax.swing.JFrame {
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
-        Movie movie1 = movieManager.readMovie("");
+        Movie movie1 = movieManager.readMovie(7);
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -334,7 +370,7 @@ public class billboard extends javax.swing.JFrame {
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
-        Movie movie1 = movieManager.readMovie("");
+        Movie movie1 = movieManager.readMovie(8);
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -351,7 +387,7 @@ public class billboard extends javax.swing.JFrame {
         try {
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
-        Movie movie1 = movieManager.readMovie("");
+        Movie movie1 = movieManager.readMovie(9);
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -367,6 +403,7 @@ public class billboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ExitJButton;
+    private javax.swing.JLabel ImageUser;
     private javax.swing.JButton Movie1;
     private javax.swing.JButton Movie2;
     private javax.swing.JButton Movie3;
@@ -376,8 +413,9 @@ public class billboard extends javax.swing.JFrame {
     private javax.swing.JButton Movie7;
     private javax.swing.JButton Movie8;
     private javax.swing.JButton Movie9;
+    private javax.swing.JLabel User;
     private javax.swing.JPanel background;
-    private javax.swing.JLabel billboardText;
+    private javax.swing.JLabel billboardText1;
     private javax.swing.JPanel jPanelTitle;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

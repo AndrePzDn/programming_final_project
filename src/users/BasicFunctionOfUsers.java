@@ -27,8 +27,13 @@ public class BasicFunctionOfUsers {
                 String nickName = result1.getString("nickName");
                 String gender = result1.getString("gender");
                 String name = result1.getString("name");
+                int login = result1.getInt("login");
                 if ((email.equalsIgnoreCase(userEmail)) && (userPassword.equalsIgnoreCase(password))){
-                    user = new UserClient(id, points, cups, email, name, userPassword, nickName, gender);
+                    user = new UserClient(id, points, cups, email, name, userPassword, nickName, gender, login);
+                    String sql = "UPDATE userClient SET login = 1 WHERE email='"+email+"'";
+                    PreparedStatement pstm= connection.prepareStatement(sql);
+                    pstm.execute();
+                    connection.close();
                     return user;
                 }
             }
@@ -43,6 +48,7 @@ public class BasicFunctionOfUsers {
                 String name = result2.getString("name");
                 if ((email.equalsIgnoreCase(userEmail)) && (userPassword.equalsIgnoreCase(password))){
                     user = new UserAdmin(id, email, name, userPassword, nickName, gender);
+                    connection.close();
                     return user;
                 }
             }
@@ -52,9 +58,8 @@ public class BasicFunctionOfUsers {
         return user;
     }
     public void singUp(String userEmail, String userName, String password, String userNickName, String userGender){
-        Connection connection;
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
             String sql1 = "SELECT * FROM userClient";
             Statement statement = connection.createStatement();
             ResultSet result1 = statement.executeQuery(sql1);
@@ -64,7 +69,39 @@ public class BasicFunctionOfUsers {
             String sql2 = "INSERT INTO userClient VALUES("+(this.id+1)+",0,0,'"+userEmail+"','"+userName+"','"+password+"','"+userNickName+"','"+userGender+"')";
             PreparedStatement pstm= connection.prepareStatement(sql2);
             pstm.execute();
+            connection.close();
         } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public String getNickNameOfUserLogged(){
+        String nickname = "asd";
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            String sql = "SELECT nickName FROM userCLient WHERE login=1";
+            Statement statement = connection.createStatement();
+            ResultSet result1 = statement.executeQuery(sql);
+            while(result1.next()){
+                String nickName = result1.getString("nickName");
+                connection.close();
+                return nickName;
+                }
+            connection.close();
+            return nickname;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return nickname;
+        }
+    }
+    public void logOut(){
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:src/database/database.db");
+            String sql2 = "UPDATE userCLient SET login = '0' WHERE login=1";
+            PreparedStatement pstm= connection.prepareStatement(sql2);
+            pstm.execute();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

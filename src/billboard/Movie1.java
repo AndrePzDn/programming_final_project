@@ -35,6 +35,8 @@ public class Movie1 extends javax.swing.JDialog {
         ScoreShowText = new javax.swing.JLabel();
         ScoreButton = new javax.swing.JButton();
         Image = new javax.swing.JLabel();
+        ImageUser = new javax.swing.JLabel();
+        User = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -133,6 +135,11 @@ public class Movie1 extends javax.swing.JDialog {
             }
         });
 
+        ImageUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/User321.png"))); // NOI18N
+        ImageUser.setAlignmentY(0.3F);
+
+        User.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+
         javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
         Background.setLayout(BackgroundLayout);
         BackgroundLayout.setHorizontalGroup(
@@ -160,7 +167,13 @@ public class Movie1 extends javax.swing.JDialog {
                 .addGap(180, 180, 180))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
+                        .addComponent(ImageUser)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(User)
+                        .addGap(26, 26, 26))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,13 +189,17 @@ public class Movie1 extends javax.swing.JDialog {
                         .addGap(296, 296, 296))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
                         .addComponent(TitleMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(252, 252, 252))))
+                        .addGap(232, 232, 232))))
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundLayout.createSequentialGroup()
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ImageUser)
+                    .addComponent(User))
+                .addGap(2, 2, 2)
                 .addComponent(jPanelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TitleMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BackgroundLayout.createSequentialGroup()
@@ -275,6 +292,7 @@ public class Movie1 extends javax.swing.JDialog {
     private javax.swing.JButton Exit;
     public javax.swing.JLabel Genre;
     public javax.swing.JLabel Image;
+    private javax.swing.JLabel ImageUser;
     public javax.swing.JLabel Premier;
     private javax.swing.JButton ScoreButton;
     private javax.swing.JLabel ScoreShowText;
@@ -283,6 +301,7 @@ public class Movie1 extends javax.swing.JDialog {
     public javax.swing.JLabel Synopsis;
     private javax.swing.JLabel TitleCineText;
     public javax.swing.JLabel TitleMovie;
+    private javax.swing.JLabel User;
     private javax.swing.JPanel jPanelTitle;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

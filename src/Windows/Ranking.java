@@ -4,6 +4,7 @@ package Windows;
 import billboard.Movie1;
 import movies.Movie;
 import movies.MovieManager;
+import users.BasicFunctionOfUsers;
 
 import javax.swing.ImageIcon;
 
@@ -14,6 +15,9 @@ public class Ranking extends javax.swing.JFrame {
     public Ranking() {
         initComponents();
         this.setLocationRelativeTo(null);
+        BasicFunctionOfUsers b = new BasicFunctionOfUsers();
+        String nickname = b.getNickNameOfUserLogged();
+        User.setText(nickname);
     }
 
    
@@ -35,6 +39,8 @@ public class Ranking extends javax.swing.JFrame {
         CommentsShowText = new javax.swing.JLabel();
         CommentsShowText1 = new javax.swing.JLabel();
         CommentsShowText2 = new javax.swing.JLabel();
+        User = new javax.swing.JLabel();
+        ImageUser = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -120,13 +126,15 @@ public class Ranking extends javax.swing.JFrame {
         CommentsShowText2.setText("<html><p style=\"width:384px\">Puntuada con: 79 Lo mejor que tiene este largometraje de 105 minutos sin dudas es el mensaje que sobrevuela durante todo el tiempo y es el de la oposici�n constante al maltrato animal, lo que lleva a que los protagonistas tomen un rol decisivo con tal de que King, en este caso, llegue a su hogar para no estar en las manos equivocadas. En el fondo tambi�n es notable el sentimiento de la p�rdida por parte de In�s, principalmente, quien ha atravesado por un gran dolor junto a su hermano y es lo que al final puede desencadenar algunas l�grimas entre los espectadores</p></html>");
         CommentsShowText2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        User.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+
+        ImageUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/User321.png"))); // NOI18N
+        ImageUser.setAlignmentY(0.3F);
+
         javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
         Background.setLayout(BackgroundLayout);
         BackgroundLayout.setHorizontalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
-                .addComponent(jPanelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addGap(201, 201, 201)
                 .addComponent(ScoreText1)
@@ -144,19 +152,35 @@ public class Ranking extends javax.swing.JFrame {
                 .addComponent(Movie3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(BackgroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(CommentsShowText, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addComponent(CommentsShowText2, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(CommentsShowText1, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67))
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
+                        .addComponent(CommentsShowText, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57)
+                        .addComponent(CommentsShowText2, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(CommentsShowText1, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(67, 67, 67))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
+                        .addComponent(ImageUser)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(User)
+                        .addGap(50, 50, 50))))
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ImageUser)
+                    .addComponent(User))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(124, 124, 124)
+                .addGap(109, 109, 109)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Movie2)
                     .addComponent(Movie1)
@@ -167,11 +191,12 @@ public class Ranking extends javax.swing.JFrame {
                     .addComponent(ScoreText2)
                     .addComponent(ScoreText3))
                 .addGap(34, 34, 34)
-                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CommentsShowText2, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CommentsShowText, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CommentsShowText1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CommentsShowText1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(CommentsShowText2, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CommentsShowText, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(Background);
@@ -197,7 +222,7 @@ public class Ranking extends javax.swing.JFrame {
     private void Movie1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie1ActionPerformed
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
-        Movie movie1 = movieManager.readMovie("Pacto con el diablo");
+        Movie movie1 = movieManager.readMovie(2);
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -211,7 +236,7 @@ public class Ranking extends javax.swing.JFrame {
     private void Movie2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie2ActionPerformed
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
-        Movie movie1 = movieManager.readMovie("King - Regreso a casa");
+        Movie movie1 = movieManager.readMovie(3);
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -224,7 +249,7 @@ public class Ranking extends javax.swing.JFrame {
     private void Movie3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Movie3ActionPerformed
         Movie1 movie = new Movie1(this,true);
         MovieManager movieManager = new MovieManager();
-        Movie movie1 = movieManager.readMovie("Spider-Man No way home");
+        Movie movie1 = movieManager.readMovie(4);
         movie.TitleMovie.setText(movie1.getName());        
         movie.Genre.setText("Genero: "+movie1.getGender());
         movie.Duration.setText("Duracion: "+movie1.getDuration());
@@ -241,6 +266,7 @@ public class Ranking extends javax.swing.JFrame {
     private javax.swing.JLabel CommentsShowText1;
     private javax.swing.JLabel CommentsShowText2;
     private javax.swing.JButton Exit;
+    private javax.swing.JLabel ImageUser;
     private javax.swing.JButton Movie1;
     private javax.swing.JButton Movie2;
     private javax.swing.JButton Movie3;
@@ -248,6 +274,7 @@ public class Ranking extends javax.swing.JFrame {
     private javax.swing.JLabel ScoreText2;
     private javax.swing.JLabel ScoreText3;
     private javax.swing.JLabel Title;
+    private javax.swing.JLabel User;
     private javax.swing.JPanel jPanelTitle;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

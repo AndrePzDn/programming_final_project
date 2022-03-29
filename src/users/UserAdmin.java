@@ -27,7 +27,7 @@ public class UserAdmin extends User{
         MovieManager movieManager = new MovieManager();
         boolean run = true;
         while (run){
-                System.out.println("Elija una opcion\n1. Añadir una pelicula\n2. Actualizar pelicula \n3. Ver Peliculas\n0. Salir");
+                System.out.println("Elija una opcion\n1. Añadir una pelicula\n2. Actualizar pelicula \n3. Ver Peliculas\n4. Eliminar una pelicula\n0. Salir");
                 option = sc.nextInt();
                 if(option == 1){
                     System.out.println("Usted selecciono añadir una pelicula");
@@ -91,6 +91,14 @@ public class UserAdmin extends User{
 
                 }else if (option == 3){
                     movieManager.showMovies();
+                }else if (option ==  4){
+                    System.out.println("Ingrese el ID de la pelicula que desea eliminar");
+                    int movieId = sc.nextInt();
+                    if (movieId == 1 || movieId == 2 || movieId == 3 || movieId == 4 || movieId == 5 || movieId == 6){
+                        System.out.println("No se puede modificar las peliculas por default");
+                    } else {
+                        movieManager.removeMovie(movieId);
+                    }
                 }else if (option == 0){
                     run = false;
                 }
